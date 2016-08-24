@@ -4,7 +4,7 @@
 
 * What is version control?  Why is it useful?
 
-It allows multiple and successive versions of a given code/file to be individually accounted for and timestamped.  This would allow any past version, at any point along the process/project to be viewed and/or modified in a way that completely keeps track of all modifications and stages along the way.  This is highly important towards observing the progress/evolution of code from the beginning of the project until the current point.
+It allows multiple and successive versions of a given code/file to be individually accounted for and timestamped.  This would allow any previous version, at any point along the process/project to be viewed and/or modified in a way that completely keeps track of all modifications and stages along the way.  This is highly important towards observing the progress/evolution of code from the beginning of the project until the current point.
 
 
 * What is a branch and why would you use one?
