@@ -12,4 +12,4 @@
 * A commit is when modified changes that a user has been working on are integrated into the original code base. A good commit message should specify what changes were made with enough detail that a person overviewing your commit message would know at a glance what was changed.
 * A merge conflict is when there is an attempt to merge a current change, but there has been a change to the master branch that has made this merge impossible.
 
-* This bullet is for Release 2: Tag your Teacher
+* This bullet is for Release 2: Tag your Teacher BontGoy
