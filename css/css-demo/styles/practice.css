@@ -11,5 +11,18 @@
 
 .list {
 	font-size: .8em;
-	
+
+}
+
+/** added pseudo selector **/
+#contact-info:hover {
+ background-color: green;
+}
+
+section section {
+	background-color: #C0C0C0;
+}
+
+ul li {
+	background-color: blue;
 }
