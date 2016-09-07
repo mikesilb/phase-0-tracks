@@ -1,5 +1,7 @@
 .hat {
-
+margin-left: 520px;
+margin-top:10px;
+position: fixed;
 }
 
 .glasses {
@@ -7,5 +9,6 @@
 }
 
 .octopus {
-
+  margin-left: 400px;
+  margin-top: 90px;
 }
