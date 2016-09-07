@@ -1,14 +1,16 @@
 .hat {
-margin-left: 520px;
+margin-left:380px;
 margin-top:10px;
 position: fixed;
-}
-
-.glasses {
-
 }
 
 .octopus {
   margin-left: 400px;
   margin-top: 90px;
+}
+
+.glasses {
+position: fixed;
+margin-top:190px;
+margin-left:442px;
 }
