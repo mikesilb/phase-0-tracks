@@ -1,12 +1,16 @@
 /** Octopus style sheet for release 3.3 **/
-.ocotopus {
-
+.octopus {
+	position: absolute;
+    top: 50%;
+    left: 50%;
 }
 
 .glasses {
+	position: relative;
 
 }
 
 .hat {
-	
+	position: relative;
+
 }
