@@ -1,0 +1,14 @@
+Release 0:
+-Enter elevator
+	-Look for elevator panel
+		-If left
+			-move left
+		else
+			-move right
+	Wait for floor number
+		received floor number check if floor number is there
+			if not there ask for different floor
+			else
+				push floor number
+
+Release 1:
