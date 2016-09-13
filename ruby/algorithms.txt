@@ -1,0 +1,70 @@
+ELEVATOR ALGORITHM
+------------------
+
+- Ask user, "What floor do you want to be at now?  Must input a positive integer" (This user input will be called 'source')
+- Push button to wait to call elevator to your floor
+- elevator = random positive integer
+- Until source==elevator, stay outside elevator
+    - if floor < elevator (elevator needs to go down to my floor)
+        - elevator -= 1
+    - else (elevator needs to go up to my floor)
+        - elevator += 1
+- Enter elevator
+    - Determine (from user input or a random positive integer what floor you want to go to (I'll call this variable, 'destination').
+    - Close elevator door
+    - until destination != floor (At the determined floor without even going up or down) 
+        - Print "You are already there!  Try again with a different, positive floor number"
+    - if destination < floor (Need to go down)
+        - while destination != floor
+            - floor -= 1
+    - elsif destination > floor (Need to go up)
+        - while destination != floor 
+            - floor += 1
+- Open elevator door
+- Depart elevator
+------------------------------------------------------------------------------
+
+BRUSHING TEETH ALGORITHM (immediately after waking up)
+-------------------------
+- open eyes
+- stretch
+- get out of bed
+- stand up
+- walk 10 paces out of bedroom
+- make right turn
+- walk 5 paces into bathroom/sink
+- extend right hand outward
+- grab toothbrush using thumb and index finger
+- with other hand squeeze toothpaste container for 2 seconds onto brush side of toothbrush
+- pivot/orient toothbrush toward mouth
+- bite (so that upper and lower teeth make contact)
+- allow toothpaste to contact center of mouth
+- move hand a few centimeters to left (so that brush with toothpaste touches left side of my mouth)
+- Loop 20 times
+    - move hand back and forth double the distance (of the prior distance)
+- loop 20 times
+    - move hand up and down 3 centimeters
+    - move hand one centimeter to right (until full mouth distance is complete)
+- loop 20 times
+    - move hand up and down 3 centimeters
+    - move hand one centimeter to left (until full mouth distance is complete)
+- open mouth
+- extend hand and tilt toothbrush to contact back of bottom teeth
+- vibrate back and forth along each tooth moving slowly from left to right along bottom teeth
+- move hand and tilt toothbrush to contact back of top teeth
+- vibrate back and forth along each tooth moving slowly from left to right along top teeth
+- Remove toothbrush from mouth
+- Put down toothbrush
+- Cup hands together
+- Turn on faucet
+- fill water into 'cup of hands'
+- bring hands to mouth
+- drink water without swallowing
+- loop 20 times 
+    - swish/gargle water from side to side in mouth 
+- spit water out
+- put toothbrush in running water
+- take finger and run across brush (to dry the brush)
+- mission accomplished
+- leave bathroom
+    

@@ -1,3 +1,35 @@
-body {
+p {
+  color:red;
+}
+
+.column-1 {
+  background-color: gray;
+  display:inline-table;
+  width:40%;
+  font-family: helvetica;
+  margin: 3%;
+  padding: 1%;
+  height:1000px;
+}
+
+.column-2 {
   background-color: blue;
+  display: inline-table;
+  width:40%;
+  height:1000px;
+  font-family: helvetica;
+  margin: 3%;
+  padding: 1%;
+}
+
+header {
+  background-color: green;
+}
+
+footer {
+  background-color: green;
+}
+
+h1:hover, h2:hover{
+ color:  #B8860B;
 }
