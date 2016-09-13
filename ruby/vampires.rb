@@ -63,6 +63,17 @@ until (num_employees == 0)
     is_vampire = -1 #Results inconclusive
   end
 
+  allergies = 0
+
+  until ((allergies == "sunshine") || (allergies == "done"))
+    puts "Can you list any allergies that you have?"
+    allergies = gets.chomp
+  end
+
+  if allergies == "sunshine"
+    is_vampire = 2
+  end
+
   case is_vampire
   when 1
     puts "Probably not a vampire"
