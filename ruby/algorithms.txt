@@ -12,3 +12,12 @@ Release 0:
 				push floor number
 
 Release 1:
+
+Throwing out the trash
+While trashcan not full 
+	Allow trash to be filled
+		add one to trash
+	if trash reaches top
+		trash = full
+end
+Throwout trash
