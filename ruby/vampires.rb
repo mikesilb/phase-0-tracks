@@ -74,17 +74,20 @@ until (num_employees == 0)
     is_vampire = 2
   end
 
-  case is_vampire
-  when 1
-    puts "Probably not a vampire"
-  when 2
-    puts "Probably a vampire"
-  when 3
-    puts "Almost certainly a vampire"
-  when 4
-    puts "Definitely a vampire"
-  when -1
-    puts "Results inconclusive"
-  end
+#  case is_vampire
+#  when 1
+#    puts "Probably not a vampire"
+#  when 2
+#    puts "Probably a vampire"
+#  when 3
+#    puts "Almost certainly a vampire"
+#  when 4
+#    puts "Definitely a vampire"
+#  when -1
+#    puts "Results inconclusive"
+#  end
   num_employees -= 1
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
+
 end
