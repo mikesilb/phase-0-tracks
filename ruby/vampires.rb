@@ -10,14 +10,38 @@
 puts ("What is your name?")
 name = gets.chomp
 
-puts ("How old are you?")
-age = gets.chomp
+puts ("How old will you be by the end of the year?")
+age = gets.chomp.to_i
 
-puts ("What year were you born?")
-year = gets.chomp
+puts ("What year were you born? (YYYY)")
+year = gets.chomp.to_i
 
-puts ("Our company cafeteria serves garlic bread. Should we order some for you?")
+puts ("Our company cafeteria serves garlic bread. Should we order some for you? (y/n)")
 garlic = gets.chomp
 
-puts ("Would you like to enroll in the company’s health insurance?")
+puts ("Would you like to enroll in the company’s health insurance? (y/n)")
 insurance = gets.chomp
+
+result = ""
+test = 0
+if (age == 2016-year && (garlic == "y" || insurance == "y"))
+	result = "Probably not a vampire"
+end
+
+if (age != 2016-year && (garlic == "n" || insurance == "n"))
+		result = "Probably a vampire"
+end
+
+if (age != 2016-year && garlic == "n" && insurance == "n")
+	result = "Almost certainly a vampire"
+end
+
+if (name == "Drake Cula" || name == "Tu Fang")
+		result = "Definitely a vampire"
+end
+
+if (result == "")
+	result = "Result Inconclusive"
+end
+
+puts result
