@@ -1,6 +1,41 @@
 /* GPS 2.1 CSS */
 
-body {
-	/*background-color: blue;*/
-	
+header {
+  background-color: red;
+  padding: 5px;
 }
+
+.column-1 {
+  background-color: blue;
+  display: inline-block;
+  width: 45%;
+  margin-right: 2%;
+  padding: 5px;
+}
+
+section p {
+  background-color: pink;
+}
+
+summary {
+  background-color: #c0c0c0;
+}
+
+li:nth-child(odd){
+  background-color: red;
+}
+
+.column-2 {
+  background-color: green;
+  display: inline-block;
+  width: 45%;
+  margin-left: 2%;
+  float: right;
+   padding: 5px;
+}
+
+footer {
+  background-color: yellow;
+   padding: 5px;
+}
+
