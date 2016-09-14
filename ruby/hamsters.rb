@@ -4,7 +4,8 @@ puts ("What is your hamster's name?")
 name = gets.chomp
 
 puts ("How loud is your hamster?")
-volume = gets.chomp volume.to_f
+volume = gets.chomp
+volume.to_f
 
 puts ("What color is your hamster's fur?")
 color = gets.chomp
@@ -13,7 +14,8 @@ puts ("Is this a good hamster to adopt?")
 adoption = gets.chomp
 
 puts ("Approx. how old is your hamster?")
-age = gets.chomp age.to_f
+age = gets.chomp
+age.to_f
 if age.empty?
  age = nil
 else
