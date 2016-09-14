@@ -63,7 +63,7 @@ while i < employees
 		status = false
 	else
 		result = "Something went wrong try again"
-
+	end
 puts result
 i += 1
 end
