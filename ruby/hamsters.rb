@@ -1,3 +1,5 @@
+# Gathers data on hamsters of unknown origin
+
 puts ("What is your hamster's name?")
 name = gets.chomp
 
