@@ -9,8 +9,10 @@
 puts ("How many employees will be processed?")
 employees = gets.chomp.to_i
 i = 0
-while i < employees
+status = false
 
+while i < employees
+	result = ""
 	puts ("What is your name?")
 	name = gets.chomp
 
@@ -26,26 +28,36 @@ while i < employees
 	puts ("Would you like to enroll in the company’s health insurance? (y/n)")
 	insurance = gets.chomp
 
-	result = ""
-	test = 0
-	if (age == 2016-year && (garlic == "y" || insurance == "y"))
-		result = "Probably not a vampire"
-	end
-
-	if (age != 2016-year && (garlic == "n" || insurance == "n"))
+	puts ("Do you have any allergies? When you're finished type 'done'")
+	until status == true
+		allergy = gets.chomp
+		if allergy == "done"
+			status = true
+		elsif allergy == "sunshine"
 			result = "Probably a vampire"
+			status = true
+		end
 	end
+	if (status == true && result == "")
+		if (age == 2016-year && (garlic == "y" || insurance == "y"))
+			result = "Probably not a vampire"
+		end
 
-	if (age != 2016-year && garlic == "n" && insurance == "n")
-		result = "Almost certainly a vampire"
-	end
+		if (age != 2016-year && (garlic == "n" || insurance == "n"))
+			result = "Probably a vampire"
+		end
 
-	if (name == "Drake Cula" || name == "Tu Fang")
-		result = "Definitely a vampire"
-	end
+		if (age != 2016-year && garlic == "n" && insurance == "n")
+			result = "Almost certainly a vampire"
+		end
 
-	if (result == "")
-		result = "Result Inconclusive"
+		if (name == "Drake Cula" || name == "Tu Fang")
+			result = "Definitely a vampire"
+		end
+
+		if (result == "")
+			result = "Result Inconclusive"
+		end
 	end
 
 puts result
