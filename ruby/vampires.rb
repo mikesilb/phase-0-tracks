@@ -58,8 +58,12 @@ while i < employees
 		if (result == "")
 			result = "Result Inconclusive"
 		end
-	end
-status = false
+		status = false
+	elsif (status == true && result != "")
+		status = false
+	else
+		result = "Something went wrong try again"
+
 puts result
 i += 1
 end
