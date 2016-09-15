@@ -57,9 +57,28 @@ def decrypt(string_input)
   p mod_string
 end
 
-encrypt("abc")
-encrypt("zed")
-decrypt("bcd")
-decrypt("afe")
+#encrypt("abc")
+#encrypt("zed")
+#decrypt("bcd")
+#decrypt("afe")
 
-test_nested_output = decrypt(encrypt("swordfish"))  #Here it will first print out the encrypted "swordfish" and then it will use that encrypted result as input for the decrypt method.  If all goes well, the result should revert back to "swordfish."
+#test_nested_output = decrypt(encrypt("swordfish"))  #Here it will first print out the encrypted "swordfish" and then it will use that encrypted result as input for the decrypt method.  If all goes well, the result should revert back to "swordfish."
+
+
+
+#Version 5 pseudocode
+#1) Request user input to determine 'encrypt' or 'decrypt' method
+#2) Ask the user for a password
+#3) Apply the method that was requested by the user
+#4) Print the results of that method.
+
+puts "Would you like to decrypt or encrypt a password?"
+user_method = gets.chomp
+puts "OK, what password would you like to #{user_method}"
+user_password = gets.chomp
+
+if user_method == "decrypt"
+  decrypt(user_password)
+elsif user_method == "encrypt"
+  encrypt(user_password)
+end
