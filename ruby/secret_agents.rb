@@ -48,7 +48,7 @@ def decrypt(string_input)
       index += 1
     else
       string_input[index] = (string_input[index].chr.ord - 1).chr
-      puts string_input[index]
+   #   puts string_input[index]
       mod_string[index] = string_input[index]
       #puts mod_string[index]
       index += 1
@@ -61,3 +61,5 @@ encrypt("abc")
 encrypt("zed")
 decrypt("bcd")
 decrypt("afe")
+
+test_nested_output = decrypt(encrypt("swordfish"))  #Here it will first print out the encrypted "swordfish" and then it will use that encrypted result as input for the decrypt method.  If all goes well, the result should revert back to "swordfish."
