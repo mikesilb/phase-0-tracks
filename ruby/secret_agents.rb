@@ -51,7 +51,20 @@ def decrypt(string)
 end
 
 #Testing for Release 3
-puts encrypt("abc")
-puts encrypt("zed")
-puts decrypt("bcd")
-puts decrypt("afe")
+#puts encrypt("abc")
+#puts encrypt("zed")
+#puts decrypt("bcd")
+#puts decrypt("afe")
+
+#Nothing went wrong the edge cases were accounted for in pseudo code
+
+#testing for release 4
+#puts decrypt(encrypt("swordfish"))
+
+=begin 
+This nested method call works because the decrypt method is looking for it's
+input and calls the encrypt method, which takes in swordfish and then returns
+the encrypted codeword to the decrypt method.
+=end
+
+
