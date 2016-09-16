@@ -23,17 +23,31 @@ def encrypt(string)
 	result = ""
 	i = 0
 	while i < string.length
-
 		if (string[i] == "z")
 			result += "a"
 		else
 			result += string[i].next
 		end
-
 		i += 1
 	end
 	return result
 end
 
-codeword = "abcdefgz"
-puts encrypt(codeword)
+def decrypt(string)
+	alphabet = "abcdefghijklmnopqrstuvwxyz"
+	i = 0
+	result_index = 0
+	result = ""
+	while i < string.length
+		if string[i] == "a"
+			result += "z"
+		else
+			result_index = alphabet.index(string[i])-1
+			result += alphabet[result_index]
+		end
+	i += 1
+	end
+	return result
+end
+codeword = "abcdz"
+puts decrypt(codeword)
