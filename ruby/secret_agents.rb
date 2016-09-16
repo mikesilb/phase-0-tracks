@@ -19,13 +19,17 @@
 *return the result
 =end
 
+# encrypts a string that is entered by shifting it to the next letter
 def encrypt(string)
 	result = ""
 	i = 0
+	#loop through the string to encrypt
 	while i < string.length
+		#if the character is z input a for edge case
 		if (string[i] == "z")
 			result += "a"
 		else
+			# shift to next character
 			result += string[i].next
 		end
 		i += 1
@@ -33,16 +37,21 @@ def encrypt(string)
 	return result
 end
 
+# decrypts a string that is entered by shifting it to the previous letter
 def decrypt(string)
+	#use this index for decrypting
 	alphabet = "abcdefghijklmnopqrstuvwxyz"
 	i = 0
 	result_index = 0
 	result = ""
+	#loop through the string to decrypt
 	while i < string.length
+		#if the character is a input z for edge case
 		if string[i] == "a"
 			result += "z"
 		else
-			result_index = alphabet.index(string[i])-1
+			#for the character to be decrypted get the index-1 for result
+			result_index = alphabet.index(string[i]) - 1
 			result += alphabet[result_index]
 		end
 	i += 1
@@ -67,4 +76,31 @@ input and calls the encrypt method, which takes in swordfish and then returns
 the encrypted codeword to the decrypt method.
 =end
 
+#Release 5
+=begin
+print message to screen and get input from user, user needs to type
+encrypt or decrypt.
 
+ask the user for a password and use gets.chomp to store the password
+then depending on the user selection call the method and print the results
+to the screen 
+=end
+
+#Driver Code
+
+#Ask the agent what they would like to do
+puts ("What would you like to do? 'encrypt' or 'decrypt'?")
+action = gets.chomp
+
+#Ask them for the password
+puts ("what's the password?")
+password = gets.chomp
+
+#execute the command and prints output to terminal
+if action == "encrypt"
+	puts encrypt(password)
+elsif action == "decrypt"
+	puts decrypt(password)
+else
+	puts "You didn't enter 'encrypt' or 'decrypt'! try again"
+end
