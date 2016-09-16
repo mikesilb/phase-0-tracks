@@ -1,0 +1,39 @@
+# MPP 4.6
+# Create an encrypt and decrypt function
+# encrypt should take a string and advance each character 1 letter forward
+# a => b ... z => a
+# decrypt should reverse this
+# a => z ... b => a
+=begin
+* encrypt should take in a string
+* loop through each index of the string and advance the letter with .next
+	*Will need an if statement to check if the letter is "z", if it's z result shoudl add "a"
+* store the result in a result variable with += to add it to the string
+* return the result.
+
+*decrypt will take in a string
+*There will be a string "abcdefghijklmnopqrstuvwxyz"
+*decrypt takes the string index and finds it in alphabet index
+*result += alphabet[i-1] unless i = 0.
+	*if i = 0 then result += "z"
+*return the result
+=end
+
+def encrypt(string)
+	result = ""
+	i = 0
+	while i < string.length
+
+		if (string[i] == "z")
+			result += "a"
+		else
+			result += string[i].next
+		end
+
+		i += 1
+	end
+	return result
+end
+
+codeword = "abcdefgz"
+puts encrypt(codeword)
