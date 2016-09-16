@@ -49,5 +49,9 @@ def decrypt(string)
 	end
 	return result
 end
-codeword = "abcdz"
-puts decrypt(codeword)
+
+#Testing for Release 3
+puts encrypt("abc")
+puts encrypt("zed")
+puts decrypt("bcd")
+puts decrypt("afe")
