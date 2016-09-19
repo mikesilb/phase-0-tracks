@@ -33,9 +33,35 @@ puts "How many children does the client have?"
 client_info[:number_of_children] = gets.chomp.to_i
 
 puts "What is their preferred decor theme?"
-client_info[:decor_theme] = gets.chomp.to_i
+client_info[:decor_theme] = gets.chomp
 
 puts "Will they be paying in cash? (true/false)"
 client_info[:paying_with_cash] = to_bool(gets.chomp)
 
+puts "Here is the entered client information"
+puts client_info
+
+puts "Would you like to change any of this information? Please use 'name', 'age', 'number_of_children', 'decor_theme', or 'paying_with_cash'"
+answer = gets.chomp
+
+if answer == "none"
+	return client_info
+elsif answer == "name"
+	puts "Re-enter the client's name"
+	client_info[answer.to_sym] = gets.chomp
+elsif answer == "age"
+	puts "Re-enter the client's age"
+	client_info[answer.to_sym] = gets.chomp.to_i
+elsif answer == "number_of_children"
+	puts "Re-enter the client's number of children"
+	client_info[answer.to_sym] = gets.chomp.to_i
+elsif answer == "decor_theme"
+	puts "Re-enter the client's preferred decor theme"
+	client_info[answer.to_sym] = gets.chomp
+elsif answer == "paying_with_cash"
+	puts "Re-enter if the client is paying with cash (true/false)"
+	client_info[answer.to_sym] = to_bool(gets.chomp)
+end
+
+puts "Here is the updated client information"
 puts client_info
