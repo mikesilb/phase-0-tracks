@@ -1,8 +1,6 @@
-=begin school_classroom_list = []
-=end
-#school_classroom_list = [nil, nil, nil, nil, nil,
+school_classroom_list = [nil, nil, nil, nil, nil,
 
-classroom = {
+ classroom6: {
 
    teachers: {
 
@@ -26,9 +24,6 @@ classroom = {
            id: 345
         }]
   },
-
-
-
 
 
   students: [{                   # 4 students
@@ -58,21 +53,11 @@ classroom = {
           id: 299
     }]
 }
-=begin
 
-#, nil, nil, nil] # The remaining unfilled classrooms
+]
 
+puts school_classroom_list[5][:classroom6][:students][2]
 
+puts school_classroom_list[5][:classroom6][:teachers][:teachers_aid][1][:address]
 
-
-=begin
-puts school_classroom_list[5][:students][2]
-
-puts school_classroom_list[5][:teachers_aid][1][:address]
-
-puts school_classroom_list[5][:lead_teacher][:id]
-=end
-puts classroom[:teachers][:lead_teacher]
-puts classroom[:teachers][:teachers_aid][1]
-
-puts classroom[:students][2]
+puts school_classroom_list[5][:classroom6][:teachers][:lead_teacher][:id]
