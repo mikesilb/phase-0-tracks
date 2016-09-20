@@ -2,9 +2,9 @@
 =end
 #school_classroom_list = [nil, nil, nil, nil, nil,
 
+classroom = {
 
-
-   teachers = {
+   teachers: {
 
         lead_teacher: {
              name:  'Linda Stevens',
@@ -25,13 +25,13 @@
            phone_num: '678-6567',
            id: 345
         }]
-  }
+  },
 
 
 
 
 
-  students = [{                   # 4 students
+  students: [{                   # 4 students
            name: 'Daniel Green',
            address: '9809 Moon St.',
            phone_num: 354-7683,
@@ -57,7 +57,7 @@
           phone_num: '789-4345',
           id: 299
     }]
-
+}
 =begin
 
 #, nil, nil, nil] # The remaining unfilled classrooms
@@ -72,7 +72,7 @@ puts school_classroom_list[5][:teachers_aid][1][:address]
 
 puts school_classroom_list[5][:lead_teacher][:id]
 =end
-puts teachers[:lead_teacher]
-puts teachers[:teachers_aid][1]
+puts classroom[:teachers][:lead_teacher]
+puts classroom[:teachers][:teachers_aid][1]
 
-puts students[2]
+puts classroom[:students][2]
