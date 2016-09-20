@@ -34,7 +34,7 @@ office_inventory = {
 		tvs: 3
 	}
 }
-
+#prints items in nested data structure
 p office_inventory[:lobby][:laptops]
 puts office_inventory[:main_office][:codename]
 puts office_inventory[:break_room][:consoles][1]
