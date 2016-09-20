@@ -29,7 +29,7 @@
 
 
 
-=begin
+
 
   students = [{                   # 4 students
            name: 'Daniel Green',
@@ -75,4 +75,4 @@ puts school_classroom_list[5][:lead_teacher][:id]
 puts teachers[:lead_teacher]
 puts teachers[:teachers_aid][1]
 
-#puts students[2]
+puts students[2]
