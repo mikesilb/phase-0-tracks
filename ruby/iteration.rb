@@ -14,13 +14,13 @@ seasons = {
 
 }
 
-arr.each {|name| puts "#{name} is cool" }
+names.each {|name| puts "#{name} is cool" }
 
-seasons.each do |name value|
+seasons.each do |name, value|
 	puts "#{name}'s favorite season is #{value}"
 end
 
-arr.map! {|name| puts "#{name} is cool"}
+names.map! {|name| puts "#{name} is cool"}
 
 seasons.map { |name, value| puts "#{name}'s favorite season is #{value}"}
 # release 2
