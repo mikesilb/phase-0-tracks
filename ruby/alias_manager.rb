@@ -33,25 +33,27 @@ end
 
 # next_letter method finds the next letter given an array of letters
 
-def next_letter(name)
+def next_letter(name_array)
 	vowels = "aeiou"
 	consonants = "bcdfghjklmnpqrstvwxyz"
 	index = 0
-	name.map! { |letter|
-		if vowels.include? letter
-			if letter == "u"
-				letter = "a"
-			else
-			index = vowels.index(letter) + 1
-			letter = vowels[index]
+	name_array.map! { |name|
+		name.map! {|letter|
+			if vowels.include? letter
+				if letter == "u"
+					letter = "a"
+				else
+					index = vowels.index(letter) + 1
+					letter = vowels[index]
+				end
+			elsif consonants.include? letter
+				if letter == "z"
+					letter = "b"
+				else
+					index = consonants.index(letter) +1
+					letter = consonants[index]
+				end
 			end
-		elsif consonants.include? letter
-			if letter == "z"
-				letter = "b"
-			else
-				index = consonants.index(letter) +1
-				letter = consonants[index]
-			end
-		end
+		}
 	}
 end
