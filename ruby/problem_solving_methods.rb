@@ -32,9 +32,8 @@ def fib(value)
 	fib_arr
 end
 
-# p fib(6)
 # driver code
-
+# p fib(6)
 # if fib(100)[-1] == 218922995834555169026
 #	 puts "true"
 # end
