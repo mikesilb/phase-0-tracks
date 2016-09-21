@@ -14,7 +14,7 @@ def search_array(arr, value)
 	end
 	index
 end
-
+# driver code
 # array = [12, 20, 45, 1, 0, 5]
 # p search_array(array, 100)
 
@@ -23,19 +23,25 @@ end
 # fib_array[i-1] + fib_array[i-2]
 
 def fib(value)
-	fib_arr = [0,1]
-	i = 2
-	while i < value
-		fib_arr[i] = fib_arr[i - 1] + fib_arr[i - 2]
-		i += 1
+	if value == 0
+		fib_arr = []
+	elsif value == 1
+		fib_arr = [0]
+	else
+		fib_arr = [0,1]
+		i = 2
+		while i < value
+			fib_arr[i] = fib_arr[i - 1] + fib_arr[i - 2]
+			i += 1
+		end
+		fib_arr
 	end
-	fib_arr
 end
 
 # driver code
-# p fib(6)
+# p fib(10)
 # if fib(100)[-1] == 218922995834555169026
-#	 puts "true"
+#  puts "true"
 # end
 
 # Sorting method - Bubble sorting
@@ -64,6 +70,6 @@ def bubble_sort(arr)
 	end
 	arr
 end
-
-array = [9,1,4,2,3,5,6,7,8,0]
-p bubble_sort(array)
+# driver code
+# array = [9,1,4,2,3,5,6,7,8,0]
+# p bubble_sort(array)
