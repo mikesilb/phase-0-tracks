@@ -22,6 +22,14 @@ use smaller methods
 	one method to join the nested array back to a string
 =end
 
+# initialize array method
+def initialize (real_name)
+	full_name = real_name.downcase.split(" ")
+	full_name.map! { |names|
+		names.chars
+	}
+	full_name.reverse
+end
 
 # next_letter method finds the next letter given an array of letters
 
