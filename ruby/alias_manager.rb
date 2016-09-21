@@ -65,3 +65,10 @@ def finalize(fake_name)
 	}
 	fake_name.join(" ")
 end
+# driver code
+# p initialize("Herman Diggs")
+# p next_letter([["t","o","r","r","e","s"],["f","e","l","i","c","i","a"]])
+# p finalize([["v", "u", "s", "s", "i", "t"], ["g", "i", "m", "o", "d", "o", "e"]])
+p finalize(next_letter(initialize("Felicia Torres")))
+
+
