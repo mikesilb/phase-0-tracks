@@ -23,7 +23,7 @@ use smaller methods
 =end
 
 # initialize array method
-def initialize(real_name)
+def initialize_array(real_name)
 	full_name = real_name.downcase.split(" ")
 	full_name.map! { |names|
 		names.chars
@@ -66,9 +66,19 @@ def finalize(fake_name)
 	fake_name.join(" ")
 end
 # driver code
-# p initialize("Herman Diggs")
+# p initialize_array("Herman Diggs")
 # p next_letter([["t","o","r","r","e","s"],["f","e","l","i","c","i","a"]])
 # p finalize([["v", "u", "s", "s", "i", "t"], ["g", "i", "m", "o", "d", "o", "e"]])
-p finalize(next_letter(initialize("Felicia Torres")))
+# p finalize(next_letter(initialize_array("Felicia Torres")))
 
-
+# Add an interface
+name = ""
+while name != "quit" do 
+	puts "Enter your name"
+	name = gets.chomp
+	if name == "quit" 
+		break
+	end
+	secret_name = finalize(next_letter(initialize_array(name)))
+	puts "Your secret name is #{secret_name}"
+end
