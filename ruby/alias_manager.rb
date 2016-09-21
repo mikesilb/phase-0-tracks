@@ -37,8 +37,8 @@ def next_letter(name_array)
 	vowels = "aeiou"
 	consonants = "bcdfghjklmnpqrstvwxyz"
 	index = 0
-	name_array.map! { |name|
-		name.map! {|letter|
+	name_array.map { |name|
+		name.map {|letter|
 			if vowels.include? letter
 				if letter == "u"
 					letter = "a"
@@ -72,13 +72,23 @@ end
 # p finalize(next_letter(initialize_array("Felicia Torres")))
 
 # Add an interface
-name = ""
-while name != "quit" do 
+# Adds data structure
+real_name = ""
+spy_list = {
+
+}
+until real_name == "quit" do 
 	puts "Enter your name"
-	name = gets.chomp
-	if name == "quit" 
+	real_name = gets.chomp
+	if real_name == "quit" 
 		break
 	end
-	secret_name = finalize(next_letter(initialize_array(name)))
-	puts "Your secret name is #{secret_name}"
+	spy_name = finalize(next_letter(initialize_array(real_name)))
+	spy_list[real_name.to_sym] = spy_name
+	puts "Your secret name is #{spy_name}"
 end
+
+spy_list.each do |real, spy|
+	puts "#{spy}'s real identity is actually #{real}!"
+end
+	
