@@ -57,31 +57,36 @@ end
 
 
 
-
+name1 = ""
 puts "What name will you want to turn into an alias?"
 name1 = gets.chomp.split(' ')
-
-
-  name = []
+until name1 == "quit"
 
   name = name1.rotate
 
-
   swapped_first_name_spelled = name[0].split('')
-  swapped_last_name_spelled = name[1].split('')
-
-
-
-  alias_first_name_spelled = swapped_first_name_spelled.map do |letter|
-    next_letter(letter)
-  end
-  alias_last_name_spelled = swapped_last_name_spelled.map  do |letter|
-    next_letter(letter)
+  if name[0] != "quit"      #Prevents error message upon quitting
+    swapped_last_name_spelled = name[1].split('')
+  else
   end
 
-  alias_first_name = alias_first_name_spelled.join
-  alias_last_name = alias_last_name_spelled.join
+  if name[0] != "quit"
+    alias_first_name_spelled = swapped_first_name_spelled.map do |letter|
+    next_letter(letter)
+    end
+    alias_last_name_spelled = swapped_last_name_spelled.map  do |letter|
+    next_letter(letter)
+    end
 
-  puts "Your new alias is #{alias_first_name} #{alias_last_name}"
 
+    alias_first_name = alias_first_name_spelled.join
+    alias_last_name = alias_last_name_spelled.join
+    puts "Your new alias is #{alias_first_name} #{alias_last_name}"
+  else
+    break
+  end
 
+  puts "What name will you want to turn into an alias?"
+  name1 = gets.chomp.split(' ')
+  name = ""
+end
