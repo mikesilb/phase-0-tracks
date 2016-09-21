@@ -23,7 +23,7 @@ use smaller methods
 =end
 
 # initialize array method
-def initialize (real_name)
+def initialize(real_name)
 	full_name = real_name.downcase.split(" ")
 	full_name.map! { |names|
 		names.chars
@@ -56,4 +56,12 @@ def next_letter(name_array)
 			end
 		}
 	}
+end
+
+# Joins the arrays into strings and then joins the two strings
+def finalize(fake_name)
+	fake_name.map! {|name|
+		name.join.capitalize
+	}
+	fake_name.join(" ")
 end
