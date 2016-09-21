@@ -16,7 +16,7 @@ seasons = {
 
 arr.each {|name| puts "#{name} is cool" }
 
-seasons.each do |name value|
+seasons.each do |name, value|
 	puts "#{name}'s favorite season is #{value}"
 end
 
