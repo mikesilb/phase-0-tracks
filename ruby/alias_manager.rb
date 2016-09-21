@@ -55,7 +55,8 @@ def next_letter(letter)
   end
 end
 
-
+final_datastructure = {}
+alias_number=0
 
 name1 = ""
 puts "What name will you want to turn into an alias?"
@@ -82,7 +83,23 @@ until name1 == "quit"
     alias_first_name = alias_first_name_spelled.join
     alias_last_name = alias_last_name_spelled.join
     puts "Your new alias is #{alias_first_name} #{alias_last_name}"
+
+    final_datastructure[alias_number] = {
+       realfirstname: name[1],
+       reallastname: name[0],
+       aliasfirstname: alias_first_name,
+       aliaslastname: alias_last_name
+     }
+
+    alias_number += 1
   else
+
+    counter = 0
+    while counter < final_datastructure.length
+      puts "#{final_datastructure[counter][:realfirstname]} #{final_datastructure[counter][:reallastname]} is also known as #{final_datastructure[counter][:aliasfirstname]} #{final_datastructure[counter][:aliaslastname]}"
+      counter+=1
+      end
+
     break
   end
 
