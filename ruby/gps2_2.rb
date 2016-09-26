@@ -81,4 +81,20 @@ delete_an_item(example2, "lemonade")
 quantity_change(example2, "ice cream", 1)
 print_list(example2)
 
+=begin
+Reflection
+------------
 
+I learned from here that having good pseudocode (which for any given method could be subdivided into input, steps, and output headings) can really help clarify what we are aiming to accomplish here.  Having it be readable and step-by-step can really aid the process of pseudocoding, which will generate many benefits once the code needs to be implemented
+
+To me, using a hash seemed more intuitive than using an array, since we had specific items (noted by the hash keys) as well as quantities (noted by the hash values).  To me, this felt like something that using a hash could accomplish effectively.  You could compensate for this by using a multidimensional array where the first array index would be the item and the second would be the quantity.  However, I still like the usage of a has better for this particular purpose.
+
+A method returns the last line within it (unless you explicitly specify something different to return).  Also telling the method to print that last line is fundamentally different than having it return its value to the driver code, so they should be treated independently.
+
+You can pass strings, variables, hashes, etc.  In other words, anything that is an object, you could theoretically pass into a method as an argument.  You also could specify a default value for any given argument (where even if no argument was explicitly stated, the value would be assigned as that particular default).  That was also interesting to determine via this exercise.
+
+You cannot explicitly pass information from one method DIRECTLY to another method.  However, you could have some variable defined within the driver code that can be passed from one method and then outputted as some value.  Then the variable could be subsequently passed to a second method and outputted as some new value.  This process can be repeated for multiple methods.  But this is all done in the driver code.  It cannot be directly passed from method to method since each one is isolated from each other.
+
+I feel like my understanding of methods and how driver code integrates with given methods got increased.  Also the difference between how a method is defined in isolation versus its implementation within the driver code.  I'm not sure if I gained confusion from this exercise, but I'm sure that there are many areas that need clarifying, above and beyond what I am currently aware of at this point.
+
+=end
