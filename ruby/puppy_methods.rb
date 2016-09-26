@@ -16,7 +16,7 @@ class Puppy
   	end
   end 
 
-  def roll_over
+  def roll_over()
   	puts "*rolls over*"
   end
 
@@ -24,7 +24,7 @@ class Puppy
   	 puts integer*7
   end
 
-  def play_dead
+  def play_dead()
   	puts "*plays_dead*"
   end
 end
@@ -35,10 +35,8 @@ class Car
 		puts "start your engines"
 	end
 
-	def drive(integer)
-		integer.times do 
+	def drive
 			puts "Vroom vroom"
-		end
 	end
 
 	def road_trip(integer)
@@ -56,22 +54,34 @@ fido.fetch("ball")
 # fido should return the ball
 fido.speak(3)
 # fido should Woof 3 times
-fido.roll_over
+fido.roll_over()
 # fido should roll over
 fido.dog_years(7)
 # should print 49
-fido.play_dead
+fido.play_dead()
 #fido should paly dead
 
 # DRIVER CODE
 sheila = Car.new
 # should initialize
-sheila.drive (2)
-# should vroom vroom twice
+sheila.drive 
+# should vroom vroom 
 sheila.road_trip(10)
 # should travel 10 miles
 =end
 
-50.times do |i| 
-	eval"car #{i} = Car.new"
+car_structure = {}
+50.times do |i|
+	car_structure["car #{i}".to_sym] = (Car.new)
+	puts i
 end
+
+p car_structure
+car_structure.each do |car_name, car_instance|
+	p car_name
+	car_instance.drive
+ 	car_instance.road_trip(1)
+end
+
+
+
