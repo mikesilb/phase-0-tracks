@@ -17,12 +17,9 @@ def grocery_list(string_list)
   grocery[item] = nil
   end
 
-  p grocery
+#  p grocery
   grocery
 end
-
-#example_list = grocery_list("carrots apples cereal pizza")
-# grocery_list ("carrots apples cereal pizza")
 
 
 
@@ -32,12 +29,9 @@ end
 # output: updated hash but not shown on the screen
 
 def add_an_item(grocery_hash,item_name, quantity=1)
-
- grocery_hash[item_name]= quantity
+  grocery_hash[item_name]= quantity
   grocery_hash
 end
-#p add_an_item(example_list, "bananas", 7)
-#p add_an_item(example_list, "bread")
 
 
 
@@ -47,12 +41,9 @@ end
 # output: updated list, but not shown on screen
 
 def delete_an_item (grocery_hash, item_name)
-
   grocery_hash.delete(item_name)
   grocery_hash
 end
-
-#p delete_an_item(example_list, "bread")
 
 
 # Method to update the quantity of an item
@@ -65,7 +56,6 @@ def quantity_change(grocery_hash, item_name, quantity)
   grocery_hash
 end
 
-#p quantity_change(example_list,"bananas", 8)
 
 
 # Method to print a list and make it look pretty
@@ -82,13 +72,13 @@ end
 #print_list(example_list)
 
 example2 = grocery_list("milk butter toast jam cereal sugar")
-p add_an_item(example2, "lemonade", 2)
-p add_an_item(example2, "tomatoes", 3)
-p add_an_item(example2, "onions")
-p add_an_item(example2, "ice cream", 4)
+add_an_item(example2, "lemonade", 2)
+add_an_item(example2, "tomatoes", 3)
+add_an_item(example2, "onions")
+add_an_item(example2, "ice cream", 4)
 
-p delete_an_item(example2, "lemonade")
-p quantity_change(example2, "ice cream", 1)
+delete_an_item(example2, "lemonade")
+quantity_change(example2, "ice cream", 1)
 print_list(example2)
 
 
