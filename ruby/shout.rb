@@ -9,3 +9,9 @@ module Shout
   	words + "!!!" + " :)"
   end
 end
+
+# DRIVER CODE
+p Shout.yell_happily("I'm Happy")
+# should return "I'm Happy!!! :)"
+p Shout.yell_angrily("I'm ANGRY")
+# should return "I'm ANGRY!!! :("
