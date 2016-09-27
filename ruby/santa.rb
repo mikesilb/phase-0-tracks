@@ -17,6 +17,11 @@ class Santa
 end
 
 # DRIVER CODE
-claus = Santa.new
+claus = Santa.new("male", "German")
 claus.speak
 claus.eat_milk_and_cookies("Chocolate Chip")
+
+benjamin = Santa.new("agender", "black")
+chris = Santa.new("female", "Latino")
+mickey =  Santa.new("bigender", "white")
+jan Santa.new("male", "Japanese")
