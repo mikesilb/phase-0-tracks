@@ -21,7 +21,7 @@ grocery_list =  create_list("carrots apples cereal pizza")
 # Method to add an item to a list
 # input: hash, item name and optional quantity in a string separated by a space
 # steps:
-	# parse the string and the first element is the item and the second is quanitity
+	# parse the string and the first element is the item and the second is quantity
 	# add the element as a key to the hash and set quantity
 # output: hash
 def add_item(list, string)
@@ -30,7 +30,10 @@ def add_item(list, string)
 	list
 end
 
-p add_item(grocery_list, "potatoes 3")
+p add_item(grocery_list, "lemonade 2")
+add_item(grocery_list, "tomatoes 3")
+add_item(grocery_list, "onions 1")
+add_item(grocery_list, "ice_cream 2")
 
 # Method to remove an item from the list
 # input: hash, item name as a string
@@ -44,7 +47,7 @@ def remove_item(list, string)
 	list
 end
 
-p remove_item(grocery_list, "potatoes")
+p remove_item(grocery_list, "lemonade")
 
 # Method to update the quantity of an item
 # input: takes in the hash and then a string
@@ -60,17 +63,19 @@ def update_item(list, string)
 	list
 end
 
-p update_item(grocery_list, "apples 10")
+p update_item(grocery_list, "ice_cream 1")
 # Method to print a list and make it look pretty
 # input: take the hash list
 # steps:
 	# for EACH hash in the list print it's quanitity
 # output: puts strings from the hash
 def print_list(list)
-	puts "This is what you need to buy"
+	puts "This is what you need to buy:"
+	puts "--------------------"
 	list.each do |item, quantity|
 		puts " #{item} : #{quantity}"
 	end
+	puts "--------------------"
 end
 
 print_list(grocery_list)
