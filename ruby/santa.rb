@@ -1,13 +1,13 @@
 class Santa
-  attr_reader :age, :ethnicity
-  attr_accessor :gender
+  attr_reader :ethnicity
+  attr_accessor :age, :gender
 
-  def initialize(gender, ethnicity)
+  def initialize(gender, ethnicity, age)
     @gender = gender
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
-    puts "Initializing Santa instance of a #{@ethnicity} #{@gender}!"
+    @age = age
+    puts "Initializing Santa instance of a #{@ethnicity} #{@gender} that is #{age} years old."
   end
 
   def speak
@@ -33,38 +33,20 @@ class Santa
 end
 
 
-=begin
-
-#basic_claus = Santa.new
-
-#basic_claus.speak
-
-#basic_claus.eat_milk_and_cookies("Choc Chip")
-
 santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-reversed_ethnicities = ["N/A", "Mystical Creature (unicorn)", "prefer not to say", "Japanese-African", "white", "Latino", "black"]
-random_ethnicities = ["Japanese-African", "Latino", "Mystical Creature (unicorn)", "N/A", "white", "prefer not to say", "black"]
-
-example_genders.length.times do |i|
-  santas << Santa.new(example_genders[i], example_ethnicities[i])
+age = Random.new
+200.times do |i|
+  santas << Santa.new(example_genders.sample,example_ethnicities.sample, age.rand(140))
 end
 
 
-example_genders.length.times do |i|
-  santas << Santa.new(example_genders[i], reversed_ethnicities[i])
-end
-example_genders.length.times do |i|
-  santas << Santa.new(example_genders[i], random_ethnicities[i])
-end
-=end
 
-newest_Santa = Santa.new("male", "Caucasian")
+#newest_Santa.celebrate_birthday
+#newest_Santa.get_mad_at("Vixen")
+#newest_Santa.gender = "female"
 
-newest_Santa.celebrate_birthday
-newest_Santa.get_mad_at("Vixen")
-newest_Santa.gender = "female"
+#puts newest_Santa.age
+#puts newest_Santa.ethnicity
 
-puts newest_Santa.age
-puts newest_Santa.ethnicity
