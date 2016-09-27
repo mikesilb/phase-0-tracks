@@ -1,7 +1,7 @@
 class Santa
 
-	attr_reader :age, :ethnicity, :reindeer_ranking
-	attr_accessor :gender
+	attr_reader :ethnicity, :reindeer_ranking
+	attr_accessor :gender, :age
 
 	def initialize(gender, ethnicity)
 		p "Initializing Santa instance..."
@@ -29,7 +29,7 @@ class Santa
 	end
 
 end
-
+=begin
 # DRIVER CODE
 claus = Santa.new("male", "German")
 claus.speak
@@ -43,7 +43,7 @@ jan =  Santa.new("male", "Japanese")
 claus.celebrate_birthday
 p claus.age
 # should return 1
-claus.gender ="female"
+claus.gender = "female"
 p claus.gender
 # should return female
 p claus.ethnicity
@@ -51,3 +51,19 @@ p claus.ethnicity
 claus.get_mad_at("Dancer")
 p claus.reindeer_ranking
 # should put rudolph at the end of the list, bad rudolph
+=end
+santas = []
+genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+ethnicities = ["black", "Latino", "white", "Japanese", "African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+i = 0
+
+while i < 200 
+	santas[i] = Santa.new(genders.sample, ethnicities.sample)
+	santas[i].age = rand(140)
+	p "This santa's age is #{santas[i].age}."
+	p "This santa's age is #{santas[i].gender}."
+	p "This santa's ethnicity is #{santas[i].ethnicity}."
+	i += 1
+end
+
