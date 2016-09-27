@@ -80,6 +80,26 @@ end
 
 print_list(grocery_list)
 
+=begin
+	* I learned that my pseudocode should include more information like inputs outputs
+	 	and steps
+	*	Hashes can hold more data and are a little more adaptable to modification to the
+		data structure in the future. Where as arrays are somewhat more easily accessible
+		but they are much harder to modify for future changes
+	*	A method returns the last argument that it passes. by calling the list as the last
+		argument it is implicitly returned.
+	*	You can pass nearly anything into a method as an argument so long as they are going
+		to be handled properly by your method, otherwise it might return an error
+	*	you can pass information between methods by calling a method as one of the arguments
+		for another method or in this case we initialize a list and pass that list through
+		all the arguments to manipulate.
+	*	Defining methods was definitely solidified during this challenge. Pseudocoding in 
+		more detail was another topic that became more clear for me. Additionally for this 
+		challenge I programed one method at a time. Breaking up methods into smaller chunks
+		seems easier now. Somethings that still have me searching for answers is when it is
+		appropriate to use hashes vs arrays and how to handle certain data structures.
+=end
+
 
 
 
