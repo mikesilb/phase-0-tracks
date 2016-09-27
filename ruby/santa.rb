@@ -1,6 +1,6 @@
 class Santa
 
-	attr_reader :age, :ethnicity, :reindeer_ranking, :gender
+	attr_reader :age, :ethnicity, :reindeer_ranking
 	attr_accessor :gender
 
 	def initialize(gender, ethnicity)
@@ -43,7 +43,7 @@ jan =  Santa.new("male", "Japanese")
 claus.celebrate_birthday
 p claus.age
 # should return 1
-claus.change_gender("female")
+claus.gender ="female"
 p claus.gender
 # should return female
 p claus.ethnicity
