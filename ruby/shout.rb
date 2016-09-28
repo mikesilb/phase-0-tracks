@@ -19,13 +19,13 @@ Shout.yell_angrily("We're not gonna take it anymore")
 
 module Shout
   def yell_angrily(words)
-  puts  words + "!!!" + " :("
+    puts  words + "!!!" + " :("
     words + "!!!" + " :("
   end
 
   def yell_happily(words)
-  puts  words + "!!!" + " That is incredibly awesome!" + " :-D"
-  words + "!!!" + " That is incredibly awesome!" + " :-D"
+    puts  words + "!!!" + " That is incredibly awesome!" + " :-D"
+    words + "!!!" + " That is incredibly awesome!" + " :-D"
   end
 end
 
