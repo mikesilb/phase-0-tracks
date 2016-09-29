@@ -35,9 +35,18 @@ describe Hangman do
 		game.guess("n")
 		expect(game.guess("n")).to eq "You've already guessed that letter. Try Again"
 	end
-	#tests winning? method
+	#tests display method
 	it "should display the current answer_array" do
 		game.guess("n")
-		expect(game.winning?).to eq ["_", "n", "_", "_", "_", "_", "n"]
+		expect(game.display).to eq "_ n _ _ _ _ n"
 	end
+	#test winning? method
+	it "should send winning message" do
+		expect(game.winning?).to eq "You Win!"
+	end
+
+	it "should send losing message" do
+		expect(game.winning?.to eq "You Lose, Loser!")
+	end
+	
 end
