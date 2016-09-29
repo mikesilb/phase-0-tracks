@@ -70,6 +70,6 @@ describe Hangman do
 		game.guess("n")
 		game.guess("i")
 		game.guess("b")
-		expect(game.winner?).to eq false
+		expect(game.winner?).to eq "6 guesses remaining...choose wisely"
 	end	
 end
