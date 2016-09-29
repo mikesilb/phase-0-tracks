@@ -20,7 +20,7 @@ will take in input and return variables
 Pseudocode:
 
 driver code tells user1 to pick a word
-	- the word is stored as a string and .SPLIT(" ") into an secret_arr.
+	- the word is stored as a string and .SPLIT("") into an secret_arr.
 		- This is initialize method of Hangman
 		- initialize an answer_arr attribute with "_" for the length of secret_arr
 		- guesses varialbe = amount of guess based on length of the word
@@ -36,12 +36,19 @@ dc tells user2 to start guessing letters of the word
 =end
 
 class Hangman
-
+attr_reader :secret_arr, :answer_arr, :guesses
 	def initialize(guess_word)
-		secret_arr = guess_word.split(" ")
-		answer_arr = []
-		secret_arr.each do
-			answer_arr << "_"
+		@secret_arr = guess_word.split("")
+		@answer_arr = []
+		@secret_arr.each do |letter|
+			@answer_arr << "_"
 		end
-		guesses = guess_word.length / 2 + 1
+		@guesses = guess_word.length / 2 + 1
+	end
 end
+
+
+game = Hangman.new("unicorn")
+p game.secret_arr
+p game.answer_arr
+p game.guesses
