@@ -46,6 +46,8 @@ attr_reader :secret_arr, :answer_arr, :guesses
 			@answer_arr << "_"
 		end
 		@guesses = guess_word.length + 3
+		@is_over = false
+		@winner = false
 	end
 
 	def guess(letter)
@@ -64,25 +66,10 @@ attr_reader :secret_arr, :answer_arr, :guesses
 		end
 	end
 
-	def gameover
-		if guesses == 0
-			return true
+	def winner?
+		if @guesses != 0 && @secret_arr == @answer_arr
+			@answer_arr.join(" ")
 		end
-		return false
 	end
 end
 
-#test code for initilize
-game = Hangman.new("unicorn")
-p game.secret_arr
-p game.answer_arr
-p game.guesses
-
-game.guess("n")
-p game.answer_arr
-game.guess("u")
-p game.answer_arr
-p game.guesses
-game.guess("u")
-p game.answer_arr
-p game.guesses
