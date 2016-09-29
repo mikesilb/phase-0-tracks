@@ -24,7 +24,7 @@ driver code tells user1 to pick a word
 		- This is initialize method of Hangman
 		- initialize an answer_arr attribute with "_" for the length of secret_arr
 		- guesses varialbe = amount of guess based on length of the word
-			- guesses = secret_arr.length/2 +1 (just because)
+			- guesses = secret_arr.length + 3
 dc tells user2 to start guessing letters of the word
 	- guess method of hangman
 		- takes a letter as a string
@@ -37,18 +37,52 @@ dc tells user2 to start guessing letters of the word
 
 class Hangman
 attr_reader :secret_arr, :answer_arr, :guesses
+
 	def initialize(guess_word)
 		@secret_arr = guess_word.split("")
 		@answer_arr = []
+		@guessed_arr = []
 		@secret_arr.each do |letter|
 			@answer_arr << "_"
 		end
-		@guesses = guess_word.length / 2 + 1
+		@guesses = guess_word.length + 3
+	end
+
+	def guess(letter)
+		if !@guessed_arr.include?(letter)
+			@guessed_arr << letter
+			i = 0
+			while i < @secret_arr.length
+				if @secret_arr[i] == letter
+					@answer_arr[i] = letter
+				end
+				i += 1
+			end
+			@guesses -= 1
+		else
+			return false
+		end
+	end
+
+	def gameover
+		if guesses == 0
+			return true
+		end
+		return false
 	end
 end
 
-
+#test code for initilize
 game = Hangman.new("unicorn")
 p game.secret_arr
+p game.answer_arr
+p game.guesses
+
+game.guess("n")
+p game.answer_arr
+game.guess("u")
+p game.answer_arr
+p game.guesses
+game.guess("u")
 p game.answer_arr
 p game.guesses
