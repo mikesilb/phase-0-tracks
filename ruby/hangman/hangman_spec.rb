@@ -65,4 +65,11 @@ describe Hangman do
 		expect(game.winner?).to eq "You Lose, Loser!"
 	end
 
+	it "should return false" do
+		game.guess("u")
+		game.guess("n")
+		game.guess("i")
+		game.guess("b")
+		expect(game.winner?).to eq false
+	end	
 end
