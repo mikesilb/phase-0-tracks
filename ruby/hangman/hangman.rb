@@ -47,6 +47,7 @@ attr_reader :secret_arr, :answer_arr, :guesses, :guessed_arr
 		end
 		@guesses = guess_word.length + 3
 		@warning = "You've already guessed that letter. Try Again"
+		@display = ""
 	end
 
 	def guess(letter)
@@ -65,9 +66,17 @@ attr_reader :secret_arr, :answer_arr, :guesses, :guessed_arr
 		end
 	end
 
+	def display
+		@display = answer_arr.join(" ")
+	end
+
 	def winner?
 		if @guesses != 0 && @secret_arr == @answer_arr
-			@answer_arr.join(" ")
+			return "You Win!"
+		elsif @guesses <= 0 
+			return "You Lose, Loser!"
+		else
+			return false
 		end
 	end
 end

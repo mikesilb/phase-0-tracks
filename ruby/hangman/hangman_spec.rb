@@ -40,13 +40,29 @@ describe Hangman do
 		game.guess("n")
 		expect(game.display).to eq "_ n _ _ _ _ n"
 	end
-	#test winning? method
+	#test winner? method
 	it "should send winning message" do
-		expect(game.winning?).to eq "You Win!"
+		game.guess("u")
+		game.guess("n")
+		game.guess("i")
+		game.guess("c")
+		game.guess("o")		
+		game.guess("r")
+		expect(game.winner?).to eq "You Win!"
 	end
 
 	it "should send losing message" do
-		expect(game.winning?.to eq "You Lose, Loser!")
+		game.guess("u")
+		game.guess("n")
+		game.guess("i")
+		game.guess("b")
+		game.guess("t")
+		game.guess("z")
+		game.guess("a")
+		game.guess("d")
+		game.guess("e")
+		game.guess("f")
+		expect(game.winner?).to eq "You Lose, Loser!"
 	end
-	
+
 end
