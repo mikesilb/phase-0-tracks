@@ -41,7 +41,7 @@ attr_reader :secret_arr, :answer_arr, :guesses, :guessed_arr, :gameover
 			@gameover = true
 			return "You Lose, Loser!"
 		else
-			return "#{guesses} remaining...choose wisely"
+			return "#{guesses} guesses remaining...choose wisely"
 		end
 	end
 
@@ -53,6 +53,7 @@ puts "Welcome to a game similar to hangman!"
 puts "First player please enter a word for the second player to guess. Please use all lowercase letters"
 word = gets.chomp
 game =Hangman.new(word)
+#adds some spacers so player two won't see the word
 puts "-" *30
 puts "-" *30
 puts "-" *30
