@@ -36,7 +36,7 @@ dc tells user2 to start guessing letters of the word
 =end
 
 class Hangman
-attr_reader :secret_arr, :answer_arr, :guesses
+attr_reader :secret_arr, :answer_arr, :guesses, :guessed_arr
 
 	def initialize(guess_word)
 		@secret_arr = guess_word.split("")
@@ -46,8 +46,7 @@ attr_reader :secret_arr, :answer_arr, :guesses
 			@answer_arr << "_"
 		end
 		@guesses = guess_word.length + 3
-		@is_over = false
-		@winner = false
+		@warning = "You've already guessed that letter. Try Again"
 	end
 
 	def guess(letter)
@@ -62,7 +61,7 @@ attr_reader :secret_arr, :answer_arr, :guesses
 			end
 			@guesses -= 1
 		else
-			return false
+			return @warning
 		end
 	end
 
@@ -72,4 +71,3 @@ attr_reader :secret_arr, :answer_arr, :guesses
 		end
 	end
 end
-
