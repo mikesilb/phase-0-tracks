@@ -24,21 +24,18 @@ inputted_word
 def initialize: Will set conditions in motion as game is initialized.
   1) @guessed_letter = nil (initial conditions)
   2) @win = false
-  3) @inputted_word, user specified
-  4) @num_guesses = length of inputted_word
+  3) @inputted_word, user specified = nil
+  4) @num_guesses = Total number of guesses. Equal to the 'length' of the word. = nil
+  5) @guess_array = [], an array formed by the specific guessed letters
+  6) @letter_correct_status = nil .  Determines the state of whether the particular guessed letter is correct
+  7) @win = false . Changes if player 2 wins
+  8) @display_array = [], A display that indicates the revealed and hidden letters
+
+def word_input_player_one: Will input a word to be guessed on.  Splits the word into an array of letters
 
 
-def guess_check: Will determine if guess was correct or not.
+def player2_letter_guesses:  Will be implemented throughout the course of any and all guesses made by player 2.  Displays the word/guess status as the game progresses.  Also takes a countdown of the number of guesses (until hitting 0, implying a loss).  Stops when all letters are found/identified.
 
-Returns true for correct or false if incorrect
-
-def guess_count: num_guesses will decrease by one with each guess unless guess is correct or unless guess is repeated
-
-def user_display_wordstate: word will start off replacing each letter with a _, and with each correct guess, replace _ with the correctly guessed letter
-
-def game_state: keeps win = false until all letters are guessed correctly AND guess_count > 0.  In this new case win becomes true.
-
-def messages: if win == true, print a winning message.  If win == false AND guess_count == 0, print a losing message
 
 
 
@@ -53,7 +50,7 @@ USE Class method to repeat 2-4 until outcome of game is decided
 =end
 
 class WordGame
-  attr_reader :inputted_word, :num_guesses, :win, :guessed_count
+  attr_reader :inputted_word, :num_guesses, :win, :guessed_count, :guess_array, :letter_correct_status, :display_array
   attr_accessor :guessed_letter
 
   def initialize
@@ -64,17 +61,16 @@ class WordGame
     @letter_correct_status = nil
     @win = false
     @display_array = []
- #   @initial_display_array = []
   end
 
   def word_input_player_one
     puts "Player 1, enter a word for the other player to guess"
-    p @inputted_word = gets.chomp
-    p @inputted_word_array = @inputted_word.split('')
+    @inputted_word = gets.chomp
+    @inputted_word_array = @inputted_word.split('')
   end
 
   def player2_letter_guesses
-   p @num_guesses = @inputted_word_array.length
+   @num_guesses = @inputted_word_array.length
    p @display_array << @inputted_word_array.map { |letter| "_"}
 
       while !win && @num_guesses > 0
@@ -82,17 +78,24 @@ class WordGame
         puts "Player 2, What letter are you planning to guess?"
         @guessed_letter = gets.chomp
 
-        p @inputted_word_array.index(@guessed_letter)
-        p @guess_array.index(@guessed_letter)
+         @used_position1 = @inputted_word_array.index(@guessed_letter)
+          @guess_array.index(@guessed_letter)
 
         if (@inputted_word_array.index(@guessed_letter)) == nil && (@guess_array.index(@guessed_letter)) == nil
           @num_guesses -= 1
           p @display_array
+        elsif (@inputted_word_array.index(@guessed_letter)) == nil
+          p @display_array
         else
           @display_array[0][@inputted_word_array.index(@guessed_letter)] = @guessed_letter
           p @display_array
+          @inputted_word_array[@used_position1] = "*"
+          if (@inputted_word_array.index(@guessed_letter)) == nil
+             @used_position2 =@inputted_word_array.index(@guessed_letter)
+          end
+
         end
-        p @guess_array.push(@guessed_letter)
+         @guess_array.push(@guessed_letter)
 
         if @num_guesses == 0
           puts "BWAHAHAHAHAHA YOU LOSE!!!!"
