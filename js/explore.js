@@ -10,10 +10,17 @@
 // return the answerString
 
 function reverse(string){
-	strArray = string.split("");
-	answerString = "";
-	for (i = strArray.length; i > 0; i--;){
-		answerString = answerString + strArray[i];
+	var strArray = string.split("");
+	var answerString = " ";
+	console.log(answerString);
+	// need to use .length -1 because the length of the array is not zero indexed
+	// so length returns a value that is index + 1
+	for (i = strArray.length - 1; i >= 0; i--){
+		answerString += strArray[i];
 	}
-	return answerString
+	return answerString;
 }
+// They see me DRIVING they hating
+var drive1 = reverse("hello");
+var drive2 = reverse("melon");
+var drive3 = reverse("what the what what");
