@@ -20,7 +20,19 @@ function reverse(string){
 	}
 	return answerString;
 }
-// They see me DRIVING they hating
+// They see me DRIVING they hating; DRIVER CODE
 var drive1 = reverse("hello");
 var drive2 = reverse("melon");
 var drive3 = reverse("what the what what");
+
+if (1 == 1 ){
+	console.log(drive1);
+}
+
+if (true == true){
+ console.log(drive2)
+}
+
+if ("string" == "string"){
+	console.log(drive3);
+}
