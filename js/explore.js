@@ -12,7 +12,7 @@ function reverse(string) {
   for (var i = string.length - 1, j=0 ; i >= 0  ; i--, j++) {
     stringrev[j] = string[i];
   }
-  return stringrev.join()
+  return stringrev.join('')
 }
 
 test1 = reverse("Michael");
