@@ -19,15 +19,17 @@ function Car(year, make, model){
 	this.year = year;
 	this.make = make;
 	this.model = model;
-	this.honk = function(){console.log("BEEPBEEP")}
+	this.honk = function() {console.log("BEEPBEEP");};
 
 }
 console.log("Let's build a car");
 var newCar = new Car(2015, "Acura", "TLX");
 console.log(newCar);
-newCar.honk;
+newCar.honk();
 var newerCar = new Car(2004, "Honda", "Element");
 console.log(newerCar);
-newerCar.honk;
+newerCar.honk();
 var dreamCar = new Car(1969, "Ford", "Mustang");
-dreamCar.honk;
+console.log(dreamCar);
+dreamCar.honk();
+console.log(dreamCar[0]);
