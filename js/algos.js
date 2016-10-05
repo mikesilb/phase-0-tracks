@@ -38,6 +38,31 @@ function max_phrase() {
   }
   return top
 }
+
+/*Release 1
+Longest phrase return
+Pseudocode
+1.  Make a function (call it "keyvaluematch").  It will input two variables
+2. variable 'is_match' = false until determined otherwise
+3. Iterate over all keys in one of the object
+  a. Create an if statement:  If the key AND the value are == for both objects.  Thus, if object1[key] = object2[key].  Then is_match becomes true.b.  If no match is found for that specific key, the iterate to the subsequent key
+*/
+
+function keyvaluematch(object1, object2) {
+  var is_match = false;
+  var keyname =  null;
+
+    {
+      if (object1[i]==object2[i]) {
+      is_match = true
+    }
+
+
+
+  }
+  return is_match
+}
+
 test1 = max_phrase("I am a rock", "You know who", "Mike rules forever AMEN", "Chuck", "testing", "123", "This is a boy who is going to town", "best of you")
 
 console.log(test1)
@@ -48,3 +73,13 @@ console.log(test2)
 
 test3 = max_phrase("Refrigerator", "Mississippi", "Abracadabra", "Massachusetts", "California")
 console.log(test3)
+
+console.log("")
+console.log("")
+console.log("")
+
+var Bill = {age: 40, weight: 200}
+console.log(Bill)
+var Jim = {age: 25, weight: 220}
+test4 = keyvaluematch(Bill, Jim)
+console.log(test4)
