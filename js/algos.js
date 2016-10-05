@@ -69,20 +69,23 @@ Pseudocode
 2. Will use that integer to formulate a loop n-times
 3. For each loop iteration, will need to determine the length of the word using a random number generator (that generates a number between 1 and 10.
   a. (Found that Math.floor((Math.random() * 10) + 1) will do it ).  Will generate as many chars (using a random number generator of lowercase letters via an array, thus Math.floor((Math.random() * 26) + 1)) using this random number generator
+  b) Transfer the new added word (one at a time) to a different array during each iteration while the first array will be reinitialized during every new iteration.  (Otherwise, the words will be concatenated together).
 */
 
 function random_output(number){
   var lowercase = "abcdefghijklmnopqrstuvwxyz";
   var word_array = []
+  var array_transfer = []
 
   for (i=0; i < number; i++) {
     for (j=0; j < Math.floor((Math.random() * 10) + 1) ; j++) {
-    word_array.push(lowercase[Math.floor((Math.random() * 25) + 1)])
+      word_array.push(lowercase[Math.floor((Math.random() * 25) + 1)])
    }
+   array_transfer[i] = word_array.join('');
+   word_array = []
 
-   output = word_array.join('');
   }
-  return output
+  return array_transfer
 }
 
 
@@ -113,5 +116,5 @@ console.log("")
 console.log("")
 console.log("")
 
-test6 = random_output(1)
+test6 = random_output(10)
 console.log(test6)
