@@ -1,7 +1,7 @@
 # Virus Predictor
 
 # I worked on this challenge [by myself, with: Hyejin].
-# We spent [#] hours on this challenge.
+# We spent 1.25 hours on this challenge.
 
 # EXPLANATION OF require_relative
 # Using require relative means that any file in the same location as the file 
