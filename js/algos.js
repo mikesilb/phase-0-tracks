@@ -50,17 +50,16 @@ Pseudocode
 
 function keyvaluematch(object1, object2) {
   var is_match = false;
-  var keyname =  null;
-
+  var i = 0
+  while (i < Object.keys(object1).length) //Iterating over all keys for
     {
-      if (object1[i]==object2[i]) {
-      is_match = true
+      if (object1[Object.keys(object1)[i]] == object2[Object.keys(object1)[i]]) //If the values for any corresponding keys are equivalent for the two objects
+       {
+        is_match = true;
     }
-
-
-
+    i++
   }
-  return is_match
+  return is_match;
 }
 
 test1 = max_phrase("I am a rock", "You know who", "Mike rules forever AMEN", "Chuck", "testing", "123", "This is a boy who is going to town", "best of you")
@@ -78,8 +77,11 @@ console.log("")
 console.log("")
 console.log("")
 
-var Bill = {age: 40, weight: 200}
-console.log(Bill)
-var Jim = {age: 25, weight: 220}
+var Bill = {age: 25, weight: 220, hometown: "LA"}
+var Jim = {age: 27, weight: 220, hometown: "NY"}
 test4 = keyvaluematch(Bill, Jim)
 console.log(test4)
+var Sally = {weight: 130, lives_at: "Chicago", favorite_team: "Cubs"}
+var Jane = {height:63, age: 47, favorite_team: "Lakers", aspiration: "Physician"}
+test5 = keyvaluematch(Sally, Jane)
+console.log(test5)
