@@ -32,4 +32,10 @@ newerCar.honk();
 var dreamCar = new Car(1969, "Ford", "Mustang");
 console.log(dreamCar);
 dreamCar.honk();
-console.log(dreamCar[0]);
+console.log(dreamCar.year);
+// loop through horse to print stuff. Personal research
+//for (var name in horse){
+//	if (horse.hasOwnProperty(name)){
+//		console.log("This horse is named " + name + "and it is " + horse[name]);
+//	};
+//};
