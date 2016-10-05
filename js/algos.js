@@ -62,6 +62,30 @@ function keyvaluematch(object1, object2) {
   return is_match;
 }
 
+/*Release 2
+Generates random test data
+Pseudocode
+1. Write function that inputs an integer.
+2. Will use that integer to formulate a loop n-times
+3. For each loop iteration, will need to determine the length of the word using a random number generator (that generates a number between 1 and 10.
+  a. (Found that Math.floor((Math.random() * 10) + 1) will do it ).  Will generate as many chars (using a random number generator of lowercase letters via an array, thus Math.floor((Math.random() * 26) + 1)) using this random number generator
+*/
+
+function random_output(number){
+  var lowercase = "abcdefghijklmnopqrstuvwxyz";
+  var word_array = []
+
+  for (i=0; i < number; i++) {
+    for (j=0; j < Math.floor((Math.random() * 10) + 1) ; j++) {
+    word_array.push(lowercase[Math.floor((Math.random() * 25) + 1)])
+   }
+
+   output = word_array.join('');
+  }
+  return output
+}
+
+
 test1 = max_phrase("I am a rock", "You know who", "Mike rules forever AMEN", "Chuck", "testing", "123", "This is a boy who is going to town", "best of you")
 
 console.log(test1)
@@ -85,3 +109,9 @@ var Sally = {weight: 130, lives_at: "Chicago", favorite_team: "Cubs"}
 var Jane = {height:63, age: 47, favorite_team: "Lakers", aspiration: "Physician"}
 test5 = keyvaluematch(Sally, Jane)
 console.log(test5)
+console.log("")
+console.log("")
+console.log("")
+
+test6 = random_output(1)
+console.log(test6)
