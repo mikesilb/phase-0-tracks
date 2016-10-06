@@ -9,9 +9,11 @@
 
 function LongestString(stringArray){
 	var longestIndex = 0;
-	for (i = 0; i < stringArray.length; i++){
-		if(stringArray[i].length > stringArray[i + 1].length){
+	var strLength = stringArray[0];
+	for (i = 1; i < stringArray.length; i++){
+		if (stringArray[i] > strLength) {
 			longestIndex = i;
+			strLength = stringArray[i].length;
 		}
 	}
 	return stringArray[longestIndex];
