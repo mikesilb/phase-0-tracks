@@ -26,7 +26,7 @@ function KeyValueMatch(obj1, obj2){
 	var flag = false;
 	for (var key1 in obj1) {
 		for (var key2 in obj2) {
-			if (key1 == key2) && (obj[key1] == obj[key2]){
+			if ((key1 == key2) && (obj1[key1] == obj2[key2])){
 				flag = true;
 			}
 		}
@@ -49,8 +49,17 @@ console.log(LongestString(array2));
 */
 
 // DRIVER CODE Release 2 
-firstObj = {name: "Steven", age: 54};
-secondObj = {name: "Tamir", age: 54};
+var firstObj = {name: "Steven", age: 54};
+var secondObj = {name: "Tamir", age: 54};
+
+console.log(KeyValueMatch(firstObj,secondObj));
+// should return true
+var anotherObj = {fame: "real", game: "teal"};
+console.log(KeyValueMatch(firstObj, anotherObj));
+// should return false
+var otherObj = {name: "Tamir", age: 20};
+console.log(KeyValueMatch(firstObj,otherObj));
+//should return false
 
 
 
