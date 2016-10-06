@@ -11,19 +11,21 @@ Pseudocode
   B) Print to console the final winner
 */
 
-function max_phrase() {
+
+
+function max_phrase(array) {
   var arg_length = []
   var phrase = []
-  for (i=0 ; i < arguments.length ;i++) {
-  arguments[i].split("")
-    arg_length[i] = (arguments[i].length)
-    phrase[i] = arguments[i]
+
+  for (i=0 ; i < array.length ;i++) {
+    arg_length[i] = (array[i].length)
+    phrase[i] = array[i]
   }
     var leader = arg_length[0]
     var lowest = 0
     var highest = 1
     var top = null
-    while (highest < arguments.length) {
+    while (highest < array.length) {
       if (leader < arg_length[highest]) {
            leader = arg_length[highest]
            lowest=highest
@@ -36,8 +38,10 @@ function max_phrase() {
 //      console.log(leader);
       highest++;
   }
+
   return top
 }
+
 
 /*Release 1
 Longest phrase return
@@ -89,15 +93,15 @@ function random_output(number){
 }
 
 
-test1 = max_phrase("I am a rock", "You know who", "Mike rules forever AMEN", "Chuck", "testing", "123", "This is a boy who is going to town", "best of you")
+test1 = max_phrase(["I am a rock", "You know who", "Mike rules forever AMEN", "Chuck", "testing", "123", "This is a boy who is going to town", "best of you"])
 
 console.log(test1)
 
-test2 = max_phrase("Tom Sawyer", "Limelight", "Cygnus X-1", "Hemispheres", "Subdivisions", "Marathon", "Time Stands Still", "Manhattan Project", "Territories")
+test2 = max_phrase(["Tom Sawyer", "Limelight", "Cygnus X-1", "Hemispheres", "Subdivisions", "Marathon", "Time Stands Still", "Manhattan Project", "Territories"])
 
 console.log(test2)
 
-test3 = max_phrase("Refrigerator", "Mississippi", "Abracadabra", "Massachusetts", "California")
+test3 = max_phrase(['Refrigerator', 'Mississippi', 'Abracadabra', 'Massachusetts', 'California'])
 console.log(test3)
 
 console.log("")
@@ -118,3 +122,5 @@ console.log("")
 
 test6 = random_output(10)
 console.log(test6)
+test7 = max_phrase(test6)
+console.log(test7)
