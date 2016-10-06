@@ -8,16 +8,24 @@
 // of the longest word. Then use that index to return the array[index]
 
 function LongestString(stringArray){
-	var longestIndex = 0;
-	var strLength = stringArray[0];
-	for (i = 1; i < stringArray.length; i++){
-		if (stringArray[i] > strLength) {
-			longestIndex = i;
-			strLength = stringArray[i].length;
+	var longestStr = "";
+	var longest = 0;
+	for (i = 0; i < stringArray.length; i++){
+		if (stringArray[i].length > longest) {
+			longest = stringArray[i].length;
+			longestStr = stringArray[i];
 		}
 	}
-	return stringArray[longestIndex];
+	return longestStr;
 }
 
+// DRIVER CODE
 var arrayOfStrings = ["long phrase","longest phrase","longer phrase"];
+var array1 = ["a", "ab", "abc", "abcd"];
+var array2 = ["this", "thats", "really really long", "not long"];
 console.log(LongestString(arrayOfStrings));
+//should return "longest phrase"
+console.log(LongestString(array1));
+//should return "abcd"
+console.log(LongestString(array2));
+//should return "really really long"
