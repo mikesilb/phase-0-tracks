@@ -41,8 +41,18 @@ function KeyValueMatch(obj1, obj2){
 //	return the array
 function RandomStringArr(length){
 	var array = [];
+	var alphabet = "abcdefghijklmnopqrstuvwxyz";
+	var randString = "";
+	var randLength = 0;
 	for (i = 0; i < length; i++){
-		array.push("_");
+		// generates a random length between 1-10 
+		randLength = Math.floor(Math.random() * 9) + 1;
+		for (j = 0; j < randLength; j++){
+			randString += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+			
+		}
+		array.push(randString);
+		randString = "";
 	}
 	return array;
 }
