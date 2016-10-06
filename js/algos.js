@@ -52,6 +52,7 @@ function RandomStringArr(length){
 			
 		}
 		array.push(randString);
+		// reset randString otherwise you're strings will be too long
 		randString = "";
 	}
 	return array;
@@ -81,13 +82,15 @@ console.log(KeyValueMatch(firstObj, anotherObj));
 var otherObj = {name: "Tamir", age: 20};
 console.log(KeyValueMatch(firstObj,otherObj));
 //should return false
-*/
+
 
 // DRIVER CODE release 3
 console.log(RandomStringArr(10));
-//should print an array with 10 slots
-
-
-
+//should print an array with 10 elements and random strings in each
+console.log(RandomStringArr(5));
+//should print an array with 5 elements and random strings in each
+console.log(RandomStringArr(1));
+//should print an array with 1 elements and random strings in each
+*/
 
 
