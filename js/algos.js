@@ -33,8 +33,19 @@ function KeyValueMatch(obj1, obj2){
 	}
 	return flag;
 }
-
-
+// function takes an integer and returns an array of that length
+// where each item in that array is a randomly generated string.
+// 	breakdown:
+//	create the array of length 'length'.
+//	fill the array with random strings of length 1-10
+//	return the array
+function RandomStringArr(length){
+	var array = [];
+	for (i = 0; i < length; i++){
+		array.push("_");
+	}
+	return array;
+}
 // DRIVER CODE
 /*
 var arrayOfStrings = ["long phrase","longest phrase","longer phrase"];
@@ -46,7 +57,7 @@ console.log(LongestString(array1));
 //should return "abcd"
 console.log(LongestString(array2));
 //should return "really really long"
-*/
+
 
 // DRIVER CODE Release 2 
 var firstObj = {name: "Steven", age: 54};
@@ -60,9 +71,11 @@ console.log(KeyValueMatch(firstObj, anotherObj));
 var otherObj = {name: "Tamir", age: 20};
 console.log(KeyValueMatch(firstObj,otherObj));
 //should return false
+*/
 
-
-
+// DRIVER CODE release 3
+console.log(RandomStringArr(10));
+//should print an array with 10 slots
 
 
 
