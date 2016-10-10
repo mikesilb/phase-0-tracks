@@ -28,15 +28,15 @@ class VirusPredictor
 # this just prints out the data created/predicted
 # by the logic in our other methods. it's referencing the instance variables
 # created by the initalize methods
-  def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+  def virus_effects(population_density, population, state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
 
 # uses the information given to calculate predicted deaths.
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -55,7 +55,7 @@ class VirusPredictor
   end
 
 # uses the information given to calculate disease spread
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -82,7 +82,7 @@ end
 
 
 STATE_DATA.each do |state, data|
-p  VirusPredictor.new(state, data[:population_density], data[:population]).virus_effects
+p  VirusPredictor.new(state, data[:population_density], data[:population]).virus_effects(data[:population_density], data[:population], state)
 end
 
 
