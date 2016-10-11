@@ -1,0 +1,15 @@
+1.
+SELECT * FROM bikes;
+
+2.
+UPDATE bikes SET repaired = "true" WHERE make = "Trek";
+SELECT * FROM bikes;
+
+3.
+SELECT * FROM bikes, types WHERE bikes.type_id = types.id;
+
+4.
+SELECT bikes.make, bikes.model, bikes.year, types.name FROM bikes JOIN types ON bikes.type_id = types.id;
+
+5.
+DELETE FROM bikes WHERE make = "Ironhorse";
