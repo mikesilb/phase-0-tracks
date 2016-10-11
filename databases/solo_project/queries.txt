@@ -1,3 +1,4 @@
+Release 2
 1.
 SELECT * FROM bikes;
 
@@ -13,3 +14,19 @@ SELECT bikes.make, bikes.model, bikes.year, types.name FROM bikes JOIN types ON 
 
 5.
 DELETE FROM bikes WHERE make = "Ironhorse";
+SELECT * FROM bikes;
+
+Release 3
+1.
+INNER JOIN: Returns all rows when there is at least one match in BOTH tables
+LEFT JOIN: Return all rows from the left table, and the matched rows from the right table
+RIGHT JOIN: Return all rows from the right table, and the matched rows from the left table
+FULL JOIN: Return all rows when there is a match in ONE of the tables
+
+2.
+SELECT bikes.make, bikes.model, bikes.year FROM bikes INNER JOIN types ON bikes.type_id = types.id;
+
+SELECT bikes.make, bikes.model, bikes.year FROM bikes LEFT JOIN types ON bikes.type_id = types.id;
+
+SELECT * FROM bikes INNER JOIN types ON bikes.type_id = types.id;
+
