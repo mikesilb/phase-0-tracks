@@ -1,0 +1,259 @@
+SELECT * FROM enneagram_types;
+
+1|The Reformer|7|4|9|2|true|false|false|Resentment_Judging|Serenity_Perfection
+2|The Helper|4|8|1|3|false|true|false|Pride_Flattery|Humility_Freedom
+3|The Achiever|6|9|2|4|false|true|false|Deceit_Vanity|Authenticity_Hope
+4|The Individualist|1|2|3|5|false|true|false|Envy_Melancholy|Equanimity_Origin
+5|The Investigator|8|7|4|6|false|false|true|Avarice_Stinginess|Nonattachment_Transparency
+6|The Loyalist|9|3|5|7|false|false|true|Fear_Cowardice|Courage_Faith
+7|The Enthusiast|5|1|6|8|false|false|true|Gluttony_Planning|Sobriety_Plan
+8|The Challenger|2|5|7|9|true|false|false|Lust_Vengeance|Innocence_Truth
+9|The Peacemaker|3|6|8|1|true|false|false|Sloth_Indolence|Action_Love
+
+
+
+UPDATE enneagram_types SET virtue_and_holy_idea = "Nonattachment_Omniscience" WHERE enneagram_type = 5;
+SELECT * FROM enneagram_types WHERE enneagram_type = 5;
+
+5|The Investigator|8|7|4|6|false|false|true|Avarice_Stinginess|Nonattachment_Omniscience
+
+
+
+
+
+
+SELECT * FROM celebrity_list, enneagram_types WHERE celebrity_list.enneagram_type = enneagram_types.enneagram_type;
+
+1|Donald Trump|1946|businessman|true|8|8|The Challenger|2|5|7|9|true|false|false|Lust_Vengeance|Innocence_Truth
+2|Walt Disney|1901|visionary|false|9|9|The Peacemaker|3|6|8|1|true|false|false|Sloth_Indolence|Action_Love
+3|Sean Connery|1930|actor|true|8|8|The Challenger|2|5|7|9|true|false|false|Lust_Vengeance|Innocence_Truth
+4|Jack Nicholson|1937|actor|true|8|8|The Challenger|2|5|7|9|true|false|false|Lust_Vengeance|Innocence_Truth
+5|Saddam Hussein|1937|political leader|false|8|8|The Challenger|2|5|7|9|true|false|false|Lust_Vengeance|Innocence_Truth
+6|Queen Elizabeth II|1926|queen|true|9|9|The Peacemaker|3|6|8|1|true|false|false|Sloth_Indolence|Action_Love
+7|Ronald Reagan|1911|political leader/actor|false|9|9|The Peacemaker|3|6|8|1|true|false|false|Sloth_Indolence|Action_Love
+8|Fred Rogers|1928|children's television show creator|false|9|9|The Peacemaker|3|6|8|1|true|false|false|Sloth_Indolence|Action_Love
+9|Al Gore|1948|politician|true|1|1|The Reformer|7|4|9|2|true|false|false|Resentment_Judging|Serenity_Perfection
+10|Jerry Seinfeld|1954|comedian|true|1|1|The Reformer|7|4|9|2|true|false|false|Resentment_Judging|Serenity_Perfection
+11|Celine Dion|1968|singer|true|1|1|The Reformer|7|4|9|2|true|false|false|Resentment_Judging|Serenity_Perfection
+12|Martha_Stewart|1941|businesswoman and television personality|true|1|1|The Reformer|7|4|9|2|true|false|false|Resentment_Judging|Serenity_Perfection
+13|Desmond Tutu|1931|Anglican bishop|true|2|2|The Helper|4|8|1|3|false|true|false|Pride_Flattery|Humility_Freedom
+14|Luciano Pavarotti|1935|operatic singer|false|2|2|The Helper|4|8|1|3|false|true|false|Pride_Flattery|Humility_Freedom
+15|Elizabeth Taylor|1932|actress|false|2|2|The Helper|4|8|1|3|false|true|false|Pride_Flattery|Humility_Freedom
+16|Richard Simmons|1948|fitness guru|true|2|2|The Helper|4|8|1|3|false|true|false|Pride_Flattery|Humility_Freedom
+17|Arnold Schwarzenegger|1947|bodybuilder, actor, and politician|true|3|3|The Achiever|6|9|2|4|false|true|false|Deceit_Vanity|Authenticity_Hope
+18|Michael Jordan|1963|basketball player|true|3|3|The Achiever|6|9|2|4|false|true|false|Deceit_Vanity|Authenticity_Hope
+19|Madonna|1958|singer|true|3|3|The Achiever|6|9|2|4|false|true|false|Deceit_Vanity|Authenticity_Hope
+20|Dick Clark|1929|television personality|false|3|3|The Achiever|6|9|2|4|false|true|false|Deceit_Vanity|Authenticity_Hope
+21|Bob Dylan|1941|singer-songwriter|true|4|4|The Individualist|1|2|3|5|false|true|false|Envy_Melancholy|Equanimity_Origin
+22|Pyotr Ilyich Tchaikovsky|1840|musical composer|false|4|4|The Individualist|1|2|3|5|false|true|false|Envy_Melancholy|Equanimity_Origin
+23|Tennessee Williams|1911|playwright|false|4|4|The Individualist|1|2|3|5|false|true|false|Envy_Melancholy|Equanimity_Origin
+24|Anne Rice|1941|author|true|4|4|The Individualist|1|2|3|5|false|true|false|Envy_Melancholy|Equanimity_Origin
+25|Albert Einstein|1879|theoretical physicist|false|5|5|The Investigator|8|7|4|6|false|false|true|Avarice_Stinginess|Nonattachment_Omniscience
+26|Mark Zuckerberg|1984|social-media entrepreneur|true|5|5|The Investigator|8|7|4|6|false|false|true|Avarice_Stinginess|Nonattachment_Omniscience
+27|Stanley Kubrick|1928|film producer and director|false|5|5|The Investigator|8|7|4|6|false|false|true|Avarice_Stinginess|Nonattachment_Omniscience
+28|Peter Gabriel|1950|singer-songwriter|true|5|5|The Investigator|8|7|4|6|false|false|true|Avarice_Stinginess|Nonattachment_Omniscience
+29|Mike Tyson|1966|boxer|true|6|6|The Loyalist|9|3|5|7|false|false|true|Fear_Cowardice|Courage_Faith
+30|David Letterman|1947|television personality|true|6|6|The Loyalist|9|3|5|7|false|false|true|Fear_Cowardice|Courage_Faith
+31|Woody Allen|1935|film director and actor|true|6|6|The Loyalist|9|3|5|7|false|false|true|Fear_Cowardice|Courage_Faith
+32|Diana, Princess of Wales|1961|humanitarian|false|6|6|The Loyalist|9|3|5|7|false|false|true|Fear_Cowardice|Courage_Faith
+33|Wolfgang Amadeus Mozart|1756|musical composer|false|7|7|The Enthusiast|5|1|6|8|false|false|true|Gluttony_Planning|Sobriety_Plan
+34|Mick Jagger|1943|singer-songwriter|true|7|7|The Enthusiast|5|1|6|8|false|false|true|Gluttony_Planning|Sobriety_Plan
+35|Steven Spielberg|1946|film director and producer|true|7|7|The Enthusiast|5|1|6|8|false|false|true|Gluttony_Planning|Sobriety_Plan
+36|Jim Carrey|1962|comedian and actor|true|7|7|The Enthusiast|5|1|6|8|false|false|true|Gluttony_Planning|Sobriety_Plan
+
+
+
+
+
+SELECT enneagram_types.enneagram_type, enneagram_types.name, passion_and_fixation, virtue_and_holy_idea, celebrity_list.name, occupation, is_alive FROM enneagram_types, celebrity_list WHERE celebrity_list.enneagram_type = enneagram_types.enneagram_type;
+
+
+8|The Challenger|Lust_Vengeance|Innocence_Truth|Donald Trump|businessman|true
+9|The Peacemaker|Sloth_Indolence|Action_Love|Walt Disney|visionary|false
+8|The Challenger|Lust_Vengeance|Innocence_Truth|Sean Connery|actor|true
+8|The Challenger|Lust_Vengeance|Innocence_Truth|Jack Nicholson|actor|true
+8|The Challenger|Lust_Vengeance|Innocence_Truth|Saddam Hussein|political leader|false
+9|The Peacemaker|Sloth_Indolence|Action_Love|Queen Elizabeth II|queen|true
+9|The Peacemaker|Sloth_Indolence|Action_Love|Ronald Reagan|political leader/actor|false
+9|The Peacemaker|Sloth_Indolence|Action_Love|Fred Rogers|children's television show creator|false
+1|The Reformer|Resentment_Judging|Serenity_Perfection|Al Gore|politician|true
+1|The Reformer|Resentment_Judging|Serenity_Perfection|Jerry Seinfeld|comedian|true
+1|The Reformer|Resentment_Judging|Serenity_Perfection|Celine Dion|singer|true
+1|The Reformer|Resentment_Judging|Serenity_Perfection|Martha_Stewart|businesswoman and television personality|true
+2|The Helper|Pride_Flattery|Humility_Freedom|Desmond Tutu|Anglican bishop|true
+2|The Helper|Pride_Flattery|Humility_Freedom|Luciano Pavarotti|operatic singer|false
+2|The Helper|Pride_Flattery|Humility_Freedom|Elizabeth Taylor|actress|false
+2|The Helper|Pride_Flattery|Humility_Freedom|Richard Simmons|fitness guru|true
+3|The Achiever|Deceit_Vanity|Authenticity_Hope|Arnold Schwarzenegger|bodybuilder, actor, and politician|true
+3|The Achiever|Deceit_Vanity|Authenticity_Hope|Michael Jordan|basketball player|true
+3|The Achiever|Deceit_Vanity|Authenticity_Hope|Madonna|singer|true
+3|The Achiever|Deceit_Vanity|Authenticity_Hope|Dick Clark|television personality|false
+4|The Individualist|Envy_Melancholy|Equanimity_Origin|Bob Dylan|singer-songwriter|true
+4|The Individualist|Envy_Melancholy|Equanimity_Origin|Pyotr Ilyich Tchaikovsky|musical composer|false
+4|The Individualist|Envy_Melancholy|Equanimity_Origin|Tennessee Williams|playwright|false
+4|The Individualist|Envy_Melancholy|Equanimity_Origin|Anne Rice|author|true
+5|The Investigator|Avarice_Stinginess|Nonattachment_Omniscience|Albert Einstein|theoretical physicist|false
+5|The Investigator|Avarice_Stinginess|Nonattachment_Omniscience|Mark Zuckerberg|social-media entrepreneur|true
+5|The Investigator|Avarice_Stinginess|Nonattachment_Omniscience|Stanley Kubrick|film producer and director|false
+5|The Investigator|Avarice_Stinginess|Nonattachment_Omniscience|Peter Gabriel|singer-songwriter|true
+6|The Loyalist|Fear_Cowardice|Courage_Faith|Mike Tyson|boxer|true
+6|The Loyalist|Fear_Cowardice|Courage_Faith|David Letterman|television personality|true
+6|The Loyalist|Fear_Cowardice|Courage_Faith|Woody Allen|film director and actor|true
+6|The Loyalist|Fear_Cowardice|Courage_Faith|Diana, Princess of Wales|humanitarian|false
+7|The Enthusiast|Gluttony_Planning|Sobriety_Plan|Wolfgang Amadeus Mozart|musical composer|false
+7|The Enthusiast|Gluttony_Planning|Sobriety_Plan|Mick Jagger|singer-songwriter|true
+7|The Enthusiast|Gluttony_Planning|Sobriety_Plan|Steven Spielberg|film director and producer|true
+7|The Enthusiast|Gluttony_Planning|Sobriety_Plan|Jim Carrey|comedian and actor|true
+
+
+
+
+
+DELETE FROM celebrity_list WHERE birth_year < 1900;
+
+1|Donald Trump|1946|businessman|true|8
+2|Walt Disney|1901|visionary|false|9
+3|Sean Connery|1930|actor|true|8
+4|Jack Nicholson|1937|actor|true|8
+5|Saddam Hussein|1937|political leader|false|8
+6|Queen Elizabeth II|1926|queen|true|9
+7|Ronald Reagan|1911|political leader/actor|false|9
+8|Fred Rogers|1928|children's television show creator|false|9
+9|Al Gore|1948|politician|true|1
+10|Jerry Seinfeld|1954|comedian|true|1
+11|Celine Dion|1968|singer|true|1
+12|Martha_Stewart|1941|businesswoman and television personality|true|1
+13|Desmond Tutu|1931|Anglican bishop|true|2
+14|Luciano Pavarotti|1935|operatic singer|false|2
+15|Elizabeth Taylor|1932|actress|false|2
+16|Richard Simmons|1948|fitness guru|true|2
+17|Arnold Schwarzenegger|1947|bodybuilder, actor, and politician|true|3
+18|Michael Jordan|1963|basketball player|true|3
+19|Madonna|1958|singer|true|3
+20|Dick Clark|1929|television personality|false|3
+21|Bob Dylan|1941|singer-songwriter|true|4
+23|Tennessee Williams|1911|playwright|false|4
+24|Anne Rice|1941|author|true|4
+26|Mark Zuckerberg|1984|social-media entrepreneur|true|5
+27|Stanley Kubrick|1928|film producer and director|false|5
+28|Peter Gabriel|1950|singer-songwriter|true|5
+29|Mike Tyson|1966|boxer|true|6
+30|David Letterman|1947|television personality|true|6
+31|Woody Allen|1935|film director and actor|true|6
+32|Diana, Princess of Wales|1961|humanitarian|false|6
+34|Mick Jagger|1943|singer-songwriter|true|7
+35|Steven Spielberg|1946|film director and producer|true|7
+36|Jim Carrey|1962|comedian and actor|true|7
+
+(Missing Tchaikovsky, Mozart, and Einstein)
+
+
+
+SELECT celebrity_list.name, enneagram_types.enneagram_type, enneagram_types.name FROM celebrity_list JOIN enneagram_types ON celebrity_list.enneagram_type = enneagram_types.enneagram_type;
+
+
+Donald Trump|8|The Challenger
+Walt Disney|9|The Peacemaker
+Sean Connery|8|The Challenger
+Jack Nicholson|8|The Challenger
+Saddam Hussein|8|The Challenger
+Queen Elizabeth II|9|The Peacemaker
+Ronald Reagan|9|The Peacemaker
+Fred Rogers|9|The Peacemaker
+Al Gore|1|The Reformer
+Jerry Seinfeld|1|The Reformer
+Celine Dion|1|The Reformer
+Martha_Stewart|1|The Reformer
+Desmond Tutu|2|The Helper
+Luciano Pavarotti|2|The Helper
+Elizabeth Taylor|2|The Helper
+Richard Simmons|2|The Helper
+Arnold Schwarzenegger|3|The Achiever
+Michael Jordan|3|The Achiever
+Madonna|3|The Achiever
+Dick Clark|3|The Achiever
+Bob Dylan|4|The Individualist
+Tennessee Williams|4|The Individualist
+Anne Rice|4|The Individualist
+Mark Zuckerberg|5|The Investigator
+Stanley Kubrick|5|The Investigator
+Peter Gabriel|5|The Investigator
+Mike Tyson|6|The Loyalist
+David Letterman|6|The Loyalist
+Woody Allen|6|The Loyalist
+Diana, Princess of Wales|6|The Loyalist
+Mick Jagger|7|The Enthusiast
+Steven Spielberg|7|The Enthusiast
+Jim Carrey|7|The Enthusiast
+
+
+
+
+
+
+SELECT celebrity_list.name, enneagram_types.enneagram_type, enneagram_types.name FROM celebrity_list LEFT JOIN enneagram_types ON celebrity_list.enneagram_type = enneagram_types.enneagram_type;
+
+
+Donald Trump|8|The Challenger
+Walt Disney|9|The Peacemaker
+Sean Connery|8|The Challenger
+Jack Nicholson|8|The Challenger
+Saddam Hussein|8|The Challenger
+Queen Elizabeth II|9|The Peacemaker
+Ronald Reagan|9|The Peacemaker
+Fred Rogers|9|The Peacemaker
+Al Gore|1|The Reformer
+Jerry Seinfeld|1|The Reformer
+Celine Dion|1|The Reformer
+Martha_Stewart|1|The Reformer
+Desmond Tutu|2|The Helper
+Luciano Pavarotti|2|The Helper
+Elizabeth Taylor|2|The Helper
+Richard Simmons|2|The Helper
+Arnold Schwarzenegger|3|The Achiever
+Michael Jordan|3|The Achiever
+Madonna|3|The Achiever
+Dick Clark|3|The Achiever
+Bob Dylan|4|The Individualist
+Tennessee Williams|4|The Individualist
+Anne Rice|4|The Individualist
+Mark Zuckerberg|5|The Investigator
+Stanley Kubrick|5|The Investigator
+Peter Gabriel|5|The Investigator
+Mike Tyson|6|The Loyalist
+David Letterman|6|The Loyalist
+Woody Allen|6|The Loyalist
+Diana, Princess of Wales|6|The Loyalist
+Mick Jagger|7|The Enthusiast
+Steven Spielberg|7|The Enthusiast
+Jim Carrey|7|The Enthusiast
+
+
+
+
+SELECT celebrity_list.name, enneagram_types.enneagram_type, enneagram_types.name FROM celebrity_list RIGHT JOIN enneagram_types ON celebrity_list.enneagram_type = enneagram_types.enneagram_type;
+
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+
+
+
+SELECT celebrity_list.name, enneagram_types.enneagram_type, enneagram_types.name FROM celebrity_list FULL OUTER JOIN enneagram_types ON celebrity_list.enneagram_type = enneagram_types.enneagram_type;
+
+(NOTE:  I knew that this would not work, but tried it anyway....)
+
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+
+
+SELECT celebrity_list.name, enneagram_types.enneagram_type, enneagram_types.name FROM celebrity_list LEFT JOIN enneagram_types ON celebrity_list.enneagram_type = enneagram_types.enneagram_type WHERE celebrity_list.enneagram_type IS NULL;
+
+(NO OUTPUT HERE....Likely, no instances of this particular join).
+
+
+
+
+
+
+
+
