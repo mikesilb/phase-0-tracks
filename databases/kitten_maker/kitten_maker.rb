@@ -33,7 +33,7 @@ def create_kitten(db, name, age)
 end
 
 10000.times do
-  create_kitten(db, Faker::Name.name, 0)
+  create_kitten(db, Faker::Name.name, rand(10))
 end
 
 # explore ORM by retrieving data
