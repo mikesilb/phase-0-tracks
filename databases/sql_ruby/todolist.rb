@@ -40,7 +40,7 @@ def read_list(db)
 	todo.each do |item|
 		if item['complete'] == 'false'
 			puts "#{item['item']} is incomplete"
-		elsif item['compelte'] == 'true'
+		elsif item['complete'] == 'true'
 			puts "#{item['item']} is complete"
 		else
 			puts "Something is wrong"
@@ -48,10 +48,17 @@ def read_list(db)
 	end
 end
 
+def mark(db, list_item)
+	db.execute("UPDATE list SET complete = 'true' WHERE item = '#{list_item}'")
+end
+
 # DRIVER CODE
 write_item(db,"Laundry")
 # sqlite3 should add "Laundry" to list.db - pass
 write_item(db,"Grocery Shopping")
 write_item(db,"Carwash") 
+#read_list(db)
+# Should read the three items in the list - pass
+mark(db, "Laundry")
 read_list(db)
-# Should read the three items in the list -
+# should read the list and show that laundry is done
