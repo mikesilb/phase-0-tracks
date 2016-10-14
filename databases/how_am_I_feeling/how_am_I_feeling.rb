@@ -37,11 +37,13 @@ db.execute(create_feedback_table_cmd)
 
 
 
+puts "This tool is an internal awareness tracker that will allow you to assess how you feel about many core life domains.  \nThere are quite a few questions below....Please reflect upon each question and check in with yourself to determine how you are feeling as you consider each question.  \nIf you don't feel like answering any one of these questions, feel free to skip the prompt by pressing RETURN."
 
 
+
+#The questions that take in user input are below
 puts "1. What is your full name?"
 fullname_in = gets.chomp
-
 puts "2. From a 1-10, how would you rate the quality of your relationships?"
 relationship_rate_in = gets.chomp
 puts "3. Would you like to elaborate about relationship stuff?"
@@ -68,33 +70,23 @@ puts "13. Would you like to elaborate about any aspect of your spirituality?"
 spiritual_comment_in = gets.chomp
 
 
-
-
 time = Time.now
 
 db.execute("INSERT INTO feedback (fullname, time, relationship_rate, relationship_comment, career_rate, career_comment, finance_rate, finance_comment, health_rate, health_comment, leisure_rate, leisure_comment, spiritual_rate, spiritual_comment) VALUES ('#{fullname_in}', '#{time}', '#{relationship_rate_in}', '#{relationship_comment_in}', '#{career_rate_in}', '#{career_comment_in}', '#{finance_rate_in}', '#{finance_comment_in}','#{health_rate_in}', '#{health_comment_in}','#{leisure_rate_in}', '#{leisure_comment_in}', '#{spiritual_rate_in}', '#{spiritual_comment_in}' )")
 
-=begin
-# add LOOOOTS of kittens!
-# so. many. kittens.
-#KittenExplosion
-#def create_kitten(db, name, age)
-#  db.execute("INSERT INTO kittens (name, age) VALUES (?, ?)", [name, age])
-#end
 
-#10000.times do
-#  create_kitten(db, Faker::Name.name, 0)
-#end
-=end
 
 
 # explore ORM by retrieving data
- feedback_out = db.execute("SELECT fullname, time, relationship_rate, career_rate, finance_rate, health_rate, spiritual_rate, leisure_rate FROM feedback")
-
-
- feedback_out.each do |category, rate_comment|
-  puts "#{category}, #{rate_comment} "
- end
-
+ feedback_out = db.execute("SELECT * FROM feedback")
+puts "\n\n\n\n\n"
+i=0
+while i < feedback_out.length
+  feedback_out[i].each do |category, rate_comment|
+  puts "#{category}:  #{rate_comment}"
+  end
+  i+=1
+  puts "\n\n\n\n\n"
+end
 
 
