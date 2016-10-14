@@ -16,6 +16,7 @@ The program will allow the user to write items to the database.
 require 'sqlite3'
 # creates a database for the todolist
 db = SQLite3::Database.new("list.db")
+db.results_as_hash = true
 
 create_table_cmd = <<-SQL
 	CREATE TABLE IF NOT EXISTS list(
@@ -27,3 +28,30 @@ SQL
 
 #create the table for the list
 db.execute(create_table_cmd)
+
+# function takes in the database variable and the item to add to the todolist.
+# then it runs an execute command to insert the item into the database. complete flag = false
+def write_item (db, item)
+	db.execute("INSERT INTO list (item, complete) VALUES ( ? , 'false')", [item])
+end
+
+def read_list(db)
+	todo = db.execute("SELECT * FROM list")
+	todo.each do |item|
+		if item['complete'] == 'false'
+			puts "#{item['item']} is incomplete"
+		elsif item['compelte'] == 'true'
+			puts "#{item['item']} is complete"
+		else
+			puts "Something is wrong"
+		end
+	end
+end
+
+# DRIVER CODE
+write_item(db,"Laundry")
+# sqlite3 should add "Laundry" to list.db - pass
+write_item(db,"Grocery Shopping")
+write_item(db,"Carwash") 
+read_list(db)
+# Should read the three items in the list -
