@@ -15,7 +15,7 @@ The program will allow the user to write items to the database.
 # need to include sqlite3
 require 'sqlite3'
 # creates a database for the todolist
-db = SQLite3::Database.new("list.db")
+db = SQLite3::Database.new("lists.db")
 db.results_as_hash = true
 
 create_table_cmd = <<-SQL
@@ -26,8 +26,17 @@ create_table_cmd = <<-SQL
 	)
 SQL
 
+create_done_table = <<-SQL
+	CREATE TABLE IF NOT EXISTS done_list(
+		id INTEGER PRIMARY KEY,
+		item VARCHAR(255),
+		complete BOOLEAN
+	)
+SQL
+
 #create the table for the list
 db.execute(create_table_cmd)
+db.execute(create_done_table)
 
 # function takes in the database variable and the item to add to the todolist.
 # then it runs an execute command to insert the item into the database. complete flag = false
@@ -61,6 +70,21 @@ def unmark(db, list_item)
 	db.execute("UPDATE list SET complete = 'false' WHERE item = '#{list_item}'")
 end
 
+# update_list method
+# takes in the database
+# deletes all marked items from list table and adds them to done_list table
+def update_list(db)
+	db.execute("INSERT INTO done_list (item, complete) SELECT list.item, list.complete FROM list WHERE complete = 'true'")
+	db.execute("DELETE FROM list WHERE complete = 'true'")
+end
+
+# method takes in 
+def read_done(db)
+	todo = db.execute("SELECT * FROM done_list")
+		todo.each do |item|
+			puts "#{item['item']} is complete"
+		end
+end
 # DRIVER CODE
 write_item(db,"Laundry")
 # sqlite3 should add "Laundry" to list.db - pass
@@ -69,7 +93,11 @@ write_item(db,"Carwash")
 #read_list(db)
 # Should read the three items in the list - pass
 mark(db, "Laundry")
-read_list(db)
+#read_list(db)
 # should read the list and show that laundry is done - pass
-unmark(db, "Laundry")
+#unmark(db, "Laundry")
+#read_list(db)
+# should unmark laundry as complete - pass
+update_list(db)
 read_list(db)
+# should remove laundry from list -
