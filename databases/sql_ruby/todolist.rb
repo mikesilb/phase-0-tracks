@@ -78,7 +78,7 @@ def update_list(db)
 	db.execute("DELETE FROM list WHERE complete = 'true'")
 end
 
-# method takes in 
+# method takes in database and reads off all compelted items
 def read_done(db)
 	todo = db.execute("SELECT * FROM done_list")
 		todo.each do |item|
@@ -100,4 +100,7 @@ mark(db, "Laundry")
 # should unmark laundry as complete - pass
 update_list(db)
 read_list(db)
-# should remove laundry from list -
+# should remove laundry from list - pass
+read_done(db)
+# should show laundry on the done_list - 
+
