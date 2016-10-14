@@ -35,6 +35,9 @@ def write_item (db, item)
 	db.execute("INSERT INTO list (item, complete) VALUES ( ? , 'false')", [item])
 end
 
+# function takes in db and prints all the items and says if they are complete or not
+# loop through the hash and if complete = false print that it is incomplete
+# if true print that it is complete else is there to catch bugs.
 def read_list(db)
 	todo = db.execute("SELECT * FROM list")
 	todo.each do |item|
@@ -48,8 +51,14 @@ def read_list(db)
 	end
 end
 
+# take in the list item to mark done, send query
 def mark(db, list_item)
 	db.execute("UPDATE list SET complete = 'true' WHERE item = '#{list_item}'")
+end
+
+# take in the list item to mark as incomplete send query
+def unmark(db, list_item)
+	db.execute("UPDATE list SET complete = 'false' WHERE item = '#{list_item}'")
 end
 
 # DRIVER CODE
@@ -61,4 +70,6 @@ write_item(db,"Carwash")
 # Should read the three items in the list - pass
 mark(db, "Laundry")
 read_list(db)
-# should read the list and show that laundry is done
+# should read the list and show that laundry is done - pass
+unmark(db, "Laundry")
+read_list(db)
