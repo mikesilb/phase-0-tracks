@@ -1,6 +1,5 @@
 # THIS APP WILL ALLOW THE USER TO RATE AND COMMENT ON HOW HE/SHE IS FEELING IN VARIOUS AREAS OF LIFE.  THIS IS A WELLNESS TOOL
 
-
 # require gems
 require 'sqlite3'
 
@@ -10,39 +9,47 @@ db = SQLite3::Database.new("how_am_I_feeling.db")
 db.results_as_hash = true
 
 # learn about fancy string delimiters
-create_individuals_table_cmd = <<-TABLE1_SQL
-  CREATE TABLE IF NOT EXISTS individuals(
+create_feedback_table_cmd = <<-TABLE1_SQL
+  CREATE TABLE IF NOT EXISTS feedback (
     id INTEGER PRIMARY KEY,
     fullname VARCHAR(255),
-    age INT,
-    FOREIGN KEY (fullname) REFERENCES feedback(name)
+    time DATE,
+    relationship_rate INT,
+    relationship_comment VARCHAR(255),
+    health_rate INT,
+    health_comment VARCHAR(255),
+    spiritual_rate INT,
+    spiritual_comment VARCHAR(255),
+    leisure_rate INT,
+    leisure_comment VARCHAR(255)
   )
 TABLE1_SQL
 
-create_feedback_table_cmd = <<-TABLE2_SQL
-  CREATE TABLE IF NOT EXISTS feedback(
-    name VARCHAR(255) PRIMARY KEY,
-    time DATE
-  )
-TABLE2_SQL
 
-# create an individual list table (if it's not there already)
-db.execute(create_individuals_table_cmd)
+
 
 # create a feedback table which will contain all ratings and comments (if it's not there already)
 db.execute(create_feedback_table_cmd)
 
 
-# add a test item to schedule
+
+
 
 puts "What is your full name?"
 fullname_in = gets.chomp
-puts "How old are you?"
-age_in = gets.chomp
+=begin
+#puts "From a 1-10, how would you rate the quality of your relationships?"
+#puts "Would you like to elaborate about relationship stuff?"
+#puts "From a 1-10, how would you rate your health?"
+#puts "Would you like to elaborate about your health?"
+=end
 
 
-db.execute("INSERT INTO individuals (fullname, age) VALUES ('#{fullname_in}', '#{age_in}')")
+time = Time.now
 
+db.execute("INSERT INTO feedback (fullname, time) VALUES ('#{fullname_in}', '#{time}')")
+
+=begin
 # add LOOOOTS of kittens!
 # so. many. kittens.
 #KittenExplosion
@@ -59,4 +66,5 @@ db.execute("INSERT INTO individuals (fullname, age) VALUES ('#{fullname_in}', '#
 # kittens.each do |kitten|
 #  puts "#{kitten['name']} is #{kitten['age']}"
 # end
+=end
 
