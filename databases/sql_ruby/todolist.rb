@@ -14,4 +14,16 @@ The program will allow the user to write items to the database.
 
 # need to include sqlite3
 require 'sqlite3'
+# creates a database for the todolist
+db = SQLite3::Database.new("list.db")
 
+create_table_cmd = <<-SQL
+	CREATE TABLE IF NOT EXISTS list(
+		id INTEGER PRIMARY KEY,
+		item VARCHAR(255),
+		complete BOOLEAN
+	)
+SQL
+
+#create the table for the list
+db.execute(create_table_cmd)
