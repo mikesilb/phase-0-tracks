@@ -14,6 +14,7 @@ create_individuals_table_cmd = <<-TABLE1_SQL
   CREATE TABLE IF NOT EXISTS individuals(
     id INTEGER PRIMARY KEY,
     fullname VARCHAR(255),
+    age INT,
     FOREIGN KEY (fullname) REFERENCES feedback(name)
   )
 TABLE1_SQL
@@ -29,11 +30,18 @@ TABLE2_SQL
 db.execute(create_individuals_table_cmd)
 
 # create a feedback table which will contain all ratings and comments (if it's not there already)
-db.execute(create_individuals_table_cmd)
+db.execute(create_feedback_table_cmd)
 
 
 # add a test item to schedule
-# db.execute("INSERT INTO kittens (name, age) VALUES ('Bob', 10)")
+
+puts "What is your full name?"
+fullname_in = gets.chomp
+puts "How old are you?"
+age_in = gets.chomp
+
+
+db.execute("INSERT INTO individuals (fullname, age) VALUES ('#{fullname_in}', '#{age_in}')")
 
 # add LOOOOTS of kittens!
 # so. many. kittens.
