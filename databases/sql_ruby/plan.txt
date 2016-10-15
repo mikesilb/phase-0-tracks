@@ -1,0 +1,22 @@
+This file is for coming up with ideas for project 8.5.
+Ideas:
+todo list
+
+Things to do
+Write a program that makes someone's life better (must use persistent data)
+	Create a database
+		decide what you want to put in the database
+		make up the schema for the database
+
+	Ruby
+		Create the database
+
+		What features should be implemented
+			write item
+			read the list
+			delete item
+			mark complete
+			mark incomplete
+			update the list
+				if complete = true delete it from the table
+			
