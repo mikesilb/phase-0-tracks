@@ -113,4 +113,33 @@ end
 #read_done(db)
 # should show laundry on the done_list - 
 puts "Welcome to your todolist!"
-puts "You can enter a new item with 'write', see your entire list with 'read', mark and item complete with 'mark', unmark a completed item with 'unmark', update your current todolist with 'update', or see your completed items with 'completed'. If you are finished type 'exit'."
+loop do 
+	puts "------------------------------"
+	puts "You can enter a new item with 'write', see your entire list with 'read', mark an item complete with 'mark', unmark a completed item with 'unmark', update your current todolist with 'update', or see your completed items with 'completed'. If you are finished type 'exit'."
+	input = gets.chomp
+	if input == "write"
+		puts "Enter an item to do"
+		argument = gets.chomp
+		write_item(db, argument)
+	elsif input == "read"
+		puts "------------------------------"
+		read_list(db)
+	elsif input == "mark"
+		puts "Enter the item that is complete"
+		argument = gets.chomp
+		mark(db, argument)
+	elsif input == "unmark"
+		puts "Enter the item that is incomplete"
+		argument = gets.chomp
+		unmark(db,argument)
+	elsif input == "update"
+		update_list(db)
+	elsif input == "completed"
+		puts "------------------------------"
+		read_done(db)
+	elsif input == "exit"
+		break
+	else
+		puts "You've entered an incorrect option"
+	end
+end
