@@ -40,8 +40,16 @@ db.execute(create_done_table)
 
 # function takes in the database variable and the item to add to the todolist.
 # then it runs an execute command to insert the item into the database. complete flag = false
-def write_item (db, item)
-	db.execute("INSERT INTO list (item, complete) VALUES ( ? , 'false')", [item])
+def write_item (db, new_item)
+	# trying to implement logic that prevents an already entered item from being entered 
+#	todo = db.execute("SELECT * FROM list")
+#	todo.each do |item|
+#		if item['item'] == new_item
+#			puts "You've entered this item before"
+#		else
+			db.execute("INSERT INTO list (item, complete) VALUES ( ? , 'false')", [new_item])
+#		end
+#	end
 end
 
 # function takes in db and prints all the items and says if they are complete or not
@@ -85,22 +93,24 @@ def read_done(db)
 			puts "#{item['item']} is complete"
 		end
 end
+
 # DRIVER CODE
-write_item(db,"Laundry")
+#write_item(db,"Laundry")
 # sqlite3 should add "Laundry" to list.db - pass
-write_item(db,"Grocery Shopping")
-write_item(db,"Carwash") 
+#write_item(db,"Grocery Shopping")
+#write_item(db,"Carwash") 
 #read_list(db)
 # Should read the three items in the list - pass
-mark(db, "Laundry")
+#mark(db, "Laundry")
 #read_list(db)
 # should read the list and show that laundry is done - pass
 #unmark(db, "Laundry")
 #read_list(db)
 # should unmark laundry as complete - pass
-update_list(db)
-read_list(db)
+#update_list(db)
+#read_list(db)
 # should remove laundry from list - pass
-read_done(db)
+#read_done(db)
 # should show laundry on the done_list - 
-
+puts "Welcome to your todolist!"
+puts "You can enter a new item with 'write', see your entire list with 'read', mark and item complete with 'mark', unmark a completed item with 'unmark', update your current todolist with 'update', or see your completed items with 'completed'. If you are finished type 'exit'."
