@@ -19,8 +19,30 @@ get '/about/:person' do
   "#{person} is a programmer, and #{person} is learning Sinatra."
 end
 
+get '/great_job/' do
+  name1 = params[:name1]
+  if name1
+    "Good job, #{name1}"
+  else
+    "Good job!"
+  end
+end
+
+get '/contact/:street_number/:city_state_zip' do
+  street_number = params[:street_number]
+  city_state_zip = params[:city_state_zip]
+  "#{street_number}<br>\n#{city_state_zip}<br><br>"
+end
+
 get '/:person_1/loves/:person_2' do
   "#{params[:person_1]} loves #{params[:person_2]}"
+end
+
+get '/adding/:number_1/:number_2' do
+  number_1 = params[:number_1].to_i
+  number_2 = params[:number_2].to_i
+  number_3 = number_1 + number_2
+  "The answer is #{number_3}."
 end
 
 # write a GET route that retrieves
@@ -40,7 +62,14 @@ end
 # write a GET route that retrieves
 # a particular student
 
+=begin
 get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
+  student.to_s
+end
+=end
+
+get '/students/:age' do
+  student = db.execute("SELECT * FROM students WHERE age=?", [params[:age]])[0]
   student.to_s
 end
