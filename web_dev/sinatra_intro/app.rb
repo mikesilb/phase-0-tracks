@@ -69,6 +69,8 @@ get '/students/:id' do
 end
 =end
 
+
+
 get '/students/:age' do
   student = db.execute("SELECT * FROM students WHERE age=?", [params[:age]])[0]
   student.to_s
