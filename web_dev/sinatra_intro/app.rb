@@ -75,3 +75,16 @@ get '/students/:age' do
   student = db.execute("SELECT * FROM students WHERE age=?", [params[:age]])[0]
   student.to_s
 end
+
+=begin
+RELEASE 1 NOTES:
+
+1. The website, https://www.ruby-toolbox.com/categories/web_app_frameworks contains a large list of Ruby based web app libraries.
+
+2. It appears as if many different databases can be connected to Sinatra.  Some of which include sqlite3, postgreSQL, ActiveRecord, DataMapper, and other such databases.
+
+3. A Web stack is the collection of software required for Web development. At a minimum, a Web stack contains an operating system (OS), a programming language, database software and a Web server. (http://whatis.techtarget.com/definition/Web-stack)
+
+
+
+=end
