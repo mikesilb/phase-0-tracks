@@ -59,5 +59,9 @@ get '/great_job' do
   end
 end
 
+get '/add/:int1/:int2' do
+  return "#{params[:int1].to_i + params[:int2].to_i}"
+end
+
 
 
