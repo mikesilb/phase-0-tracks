@@ -49,3 +49,15 @@ end
 get '/contact' do
   "123 Fake Street"
 end
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{params[:name]}!"
+  else
+    "Good job!"
+  end
+end
+
+
+
