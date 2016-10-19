@@ -30,3 +30,12 @@ get '/students/chicago' do
     @students = db.execute("SELECT * FROM students WHERE campus = 'CHI'")
       erb :chicago
 end
+# creates form to delete students with same name
+get '/students/remove' do
+    erb :delete_student
+end
+
+post '/students_remove' do
+    db.execute("DELETE FROM students WHERE name=?", [params['name']])
+    redirect '/'
+end
