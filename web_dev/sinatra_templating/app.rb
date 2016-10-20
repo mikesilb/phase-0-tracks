@@ -32,7 +32,7 @@ end
 
 
 post '/students/delete' do
-  db.execute("DELETE FROM students where name = ?"), param['name'])
+  db.execute("DELETE FROM students where name = ?", params['name'])
   redirect '/'
 end
 
